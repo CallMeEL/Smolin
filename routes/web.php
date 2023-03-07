@@ -18,5 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/homepage', function () {
-    return view('homepage');
+    return view('halaman-beranda.homepage');
+});
+
+Route::get('/login', function () {
+    return view('user.halaman-login');
 });
