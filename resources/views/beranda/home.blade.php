@@ -13,7 +13,7 @@
         <h1 class="mb-2 display-2 text-white"><strong>dengan Smolin!</strong></h1>
         <br>
         <br>
-        <a href="#layanan">
+        <a href="#">
             <button type="button" class="btn btn-info btn-lg text-white">
             <strong>Sewa Sekarang!</strong>
             </button>

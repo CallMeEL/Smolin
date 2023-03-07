@@ -11,7 +11,7 @@
     top: 150px;
 }
 .colorpink{
-    color: #fc2585;
+    background-color: #fc2585;
 }
 .blur {
     -webkit-backdrop-filter: blur(8px);
@@ -22,3 +22,12 @@
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
+input.transparent-input{
+    background-color:rgba(255, 255, 255, 0.252) !important;
+    border:none !important;
+}
+.button-press-pink:hover {
+    box-shadow: 0 12px 16px 0 rgba(206, 73, 73, 0.335), 0 17px 50px 0 rgba(206, 73, 73, 0.19);
+    background-color: #fc2586e4;
+}
+ 
