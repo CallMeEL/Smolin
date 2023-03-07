@@ -13,13 +13,7 @@
     <div class="container-fluid banner">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
-                <div class="card text-dark bg-white">
-                    <div class="card-body">
-                        <h1 class="card-title">Login</h1>
-                        <hr>
-                        <p class="card-text">Text</p>
-                    </div>
-                </div>
+                <h1>test</h1>
             </div>
         </div>
     </div>

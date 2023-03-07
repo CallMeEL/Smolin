@@ -22,5 +22,5 @@ Route::get('/profile', function (){
 });
 
 Route::get('/login', function () {
-    return view('user.halaman-login');
+    return view('user.login');
 });

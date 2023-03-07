@@ -20,7 +20,7 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav navbar-right me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/">Home</a>
             </li>
