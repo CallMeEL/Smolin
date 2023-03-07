@@ -13,12 +13,12 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid banner">
+    <div class="container-fluid banner2">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
                 {{--Head--}}
                 <h2 class="text-center"><strong>Glad to see you again!</strong></h2>
-
+                <br>
                 <form action="#" method="POST">
                     @csrf
 {{--Email--}}
@@ -26,9 +26,6 @@
                         <input type="email" class="form-control transparent-input" id="email" placeholder="Enter email" name="email" autofocus required>
                         <label for="email">Email</label>
                     </div>
-                    @error('email')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
 {{--Password--}}
                     <div class="form-floating mt-3 mb-3">
                         <input type="password" class="form-control transparent-input" id="password" placeholder="Enter password" name="password" required>
@@ -38,11 +35,13 @@
                     <div class="form-floating mt-3 mb-3">
                         <input type="checkbox" class="" onclick="myFunction()"> Show Password
                     </div>
+                    <br>
 {{--Button--}}
                     <div class="d-grid">
                     <button type="submit" class="btn colorpink button-press-pink text-white btn-block"><strong>Login</strong></button>
                     </div>
-                    <p>Belum punya akun?<a href="#" id="register">Daftar</a></p>
+                    <br>
+                    <p class="text-center">Don't have an account?   <a class="text-white" href="#" id="register"><strong>Register</strong></a></p>
 
                 </form>
             </div>

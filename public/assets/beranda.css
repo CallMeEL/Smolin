@@ -6,6 +6,14 @@
     padding-bottom: 20%;
     color: #fff;
 }
+.banner2 {
+    background: url("hoome.png")
+    no-repeat center center;
+    background-size: cover;
+    padding-top: 5%;
+    padding-bottom: 15%;
+    color: #fff;
+}
 .top{
     position: absolute;
     top: 150px;
@@ -24,6 +32,10 @@
 }
 input.transparent-input{
     background-color:rgba(255, 255, 255, 0.252) !important;
+    border:none !important;
+}
+.transparent-background{
+    background-color:rgba(255, 255, 255, 0.113) !important;
     border:none !important;
 }
 .button-press-pink:hover {
