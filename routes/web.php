@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/homepage', function () {
-    return view('halaman-beranda.homepage');
+    return view('beranda.beranda');
 });
 
 Route::get('/login', function () {
