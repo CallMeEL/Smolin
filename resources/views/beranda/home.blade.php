@@ -1,4 +1,7 @@
 @extends('beranda.layout')
+@section('title', 'Home Smolin')
+@section('menuHome', 'active')
+
 
 @section('content')
 <div class="row">
