@@ -27,11 +27,6 @@
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
     }
-    .shadow-5-strong {
-        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    }
     </style>
 </head>
 <body>
