@@ -1,5 +1,5 @@
 .banner {
-    background: url("{{ ('hoome.png') }}")
+    background: url("hoome.png")
     no-repeat center center;
     background-size: cover;
     padding-top: 20%;
