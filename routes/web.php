@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda.home');
 });
 
-Route::get('/homepage', function () {
-    return view('homepage');
+Route::get('/profile', function (){
+    return view('beranda.profile');
+});
+
+Route::get('/login', function () {
+    return view('user.login');
 });
