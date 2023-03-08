@@ -18,7 +18,8 @@
             <div class="col-md-3"></div>
             <div class="col-md-4 transparent-background">
 {{--Head--}}
-                <h2 class="text-center"><strong>Infokan mabar terdekat</strong></h2>
+                <br>
+                <h2 class="text-center"><strong>Let's start the journey!</strong></h2>
                 <br>
                 <form action="#" method="POST">
                     @csrf

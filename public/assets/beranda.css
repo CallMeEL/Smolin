@@ -3,7 +3,7 @@
     no-repeat center center;
     background-size: cover;
     padding-top: 20%;
-    padding-bottom: 20%;
+    padding-bottom: 30%;
     color: #fff;
 }
 .banner2 {
@@ -54,5 +54,9 @@ input.transparent-input{
 }
 .transparent-background{
     background-color:rgba(36, 36, 36, 0.701) !important;
+    border:none !important;
+}
+.transparent-background2{
+    background-color:rgba(24, 24, 24, 0.326) !important;
     border:none !important;
 }

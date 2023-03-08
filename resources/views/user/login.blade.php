@@ -20,7 +20,8 @@
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-4 transparent-background">
-                {{--Head--}}
+{{--Head--}}
+                <br>
                 <h2 class="text-center"><strong>Glad to see you again!</strong></h2>
                 <br>
                 <form action="#" method="POST">
