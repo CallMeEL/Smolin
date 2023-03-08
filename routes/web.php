@@ -23,6 +23,15 @@ Route::get('/profile', function (){
     return view('beranda.profile');
 });
 
+//[+]============================================================[+]
+//                        Login Controller
+//[+]============================================================[+]
+
 Route::get('/login', [LoginController::class, 'index']);
 
+//[+]============================================================[+]
+//                      Register Controller
+//[+]============================================================[+]
+
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
