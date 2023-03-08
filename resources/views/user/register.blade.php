@@ -50,7 +50,6 @@
                     <br>
                     <p class="text-center">You have an account?   <a class="text-white" href="#" id="register"><strong>Login</strong></a></p>
                 </form>
-                {{-- </div> --}}
         </div>
     </div>
     
