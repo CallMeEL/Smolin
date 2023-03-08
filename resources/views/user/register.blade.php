@@ -12,14 +12,12 @@
 <body>
 <div class="container-fluid banner2">
         <div class="row justify-content-center align-items-center">
-            <div class="col-md-4">
+            <div class="col-md-4 transparent-background">
 {{--Head--}}
                 <h2 class="text-center"><strong>Infokan mabar terdekat</strong></h2>
                 <br>
                 <form action="#" method="POST">
                     @csrf
-{{--Form--}}
-                <div class="rectangleForm">
 {{--Full Name--}}
                     <div class="form-floating mb-3 mt-3">
                         <input type="fullName" class="form-control transparent-input" id="fullName" placeholder="Enter fullName" name="fullname" autofocus required>
@@ -50,13 +48,12 @@
                     <button type="submit" class="btn colorpink button-press-pink text-white btn-block"><strong>Register</strong></button>
                     </div>
                     <br>
+                    <p class="text-center">You have an account?   <a class="text-white" href="#" id="register"><strong>Login</strong></a></p>
                 </form>
-                </div>
+                {{-- </div> --}}
         </div>
     </div>
-    <div class="col-md-3">
-        <img style="width: 300px" src="{{ ('img/motor_header.png') }}" alt="">
-    </div>
+    
 </div>
 </body>
 </html>
