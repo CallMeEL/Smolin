@@ -55,6 +55,9 @@
                 </div>
         </div>
     </div>
+    <div class="col-md-3">
+        <img style="width: 300px" src="{{ ('img/motor_header.png') }}" alt="">
+    </div>
 </div>
 </body>
 </html>
