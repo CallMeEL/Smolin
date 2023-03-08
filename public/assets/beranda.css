@@ -53,6 +53,6 @@ input.transparent-input{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.116);
 }
 .transparent-background{
-    background-color:rgba(52, 52, 52, 0.328) !important;
+    background-color:rgba(52, 52, 52, 0.534) !important;
     border:none !important;
 }
