@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,15 @@ Route::get('/profile', function (){
     return view('beranda.profile');
 });
 
-Route::get('/login', function () {
-    return view('user.login');
-});
+//[+]============================================================[+]
+//                        Login Controller
+//[+]============================================================[+]
 
-Route::get('/register', function () {
-    return view('user.register');
-});
+Route::get('/login', [LoginController::class, 'index']);
+
+//[+]============================================================[+]
+//                      Register Controller
+//[+]============================================================[+]
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
