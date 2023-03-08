@@ -15,6 +15,10 @@
 <body>
     <div class="container-fluid banner2">
         <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img style="width: 300px" src="{{ ('img/motor_header.png') }}" alt="">
+            </div>
+            <div class="col-md-3"></div>
             <div class="col-md-4 transparent-background">
                 {{--Head--}}
                 <h2 class="text-center"><strong>Glad to see you again!</strong></h2>
