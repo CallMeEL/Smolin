@@ -12,7 +12,7 @@
 <body>
 <!-- Navbar -->
     <nav class="navbar fixed-top blur navbar-expand-lg shadow-5-strong">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <strong class="text-white" >Smolin</strong>
         </a>

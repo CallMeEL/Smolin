@@ -8,18 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ ('assets/beranda.css') }}">
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="container-fluid banner2">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
-                <img style="width: 300px" src="{{ ('img/motor_header.png') }}" alt="">
+                <img style="width: 100%" src="{{ ('img/motor_header.png') }}" alt="">
             </div>
             <div class="col-md-3"></div>
-            <div class="col-md-4 transparent-background">
+            <div class="col-sm-4 transparent-background">
 {{--Head--}}
                 <br>
                 <h2 class="text-center"><strong>Glad to see you again!</strong></h2>

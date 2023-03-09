@@ -43,7 +43,7 @@
         </a>
     </div>
     <div class="col-md-3">
-        <img style="width: 300px" src="{{ ('img/motor_header.png') }}" alt="">
+        <img style="width: 100%" src="{{ ('img/motor_header.png') }}" alt="">
     </div>
 </div>
 @endsection
