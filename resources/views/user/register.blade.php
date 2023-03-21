@@ -21,27 +21,43 @@
                 <br>
                 <h2 class="text-center"><strong>Let's start the journey!</strong></h2>
                 <br>
-                <form action="#" method="POST">
+                <form action="/register" method="POST">
                     @csrf
 {{--Full Name--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="fullName" class="form-control transparent-input" id="fullName" placeholder="Enter fullName" name="fullname" autofocus required>
-                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control transparent-input @error('name') is-invalid @enderror" id="name" placeholder="Enter fullName" name="name" autofocus required value="{{ old('name') }}">
+                        <label for="fullName">Name</label>
+                        {{-- Error Message --}}
+                                @error('name')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Phone Number--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <=57" class="form-control transparent-input" id="phoneNumber" placeholder="Enter phoneNumber" name="phoneNumber" autofocus required>
-                        <label for="name">Phone Number</label>
+                        <input type="text" class="form-control transparent-input @error('phone_number') is-invalid @enderror" id="phone_number" placeholder="Enter phoneNumber" name="phone_number" required value="{{ old('phone_number') }}">
+                        <label for="phone_number">Phone Number</label>
+                        {{-- Error Message --}}
+                                @error('phone_number')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Email--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control transparent-input" id="email" placeholder="Enter email" name="email" autofocus required>
+                        <input type="email" class="form-control transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" required value="{{ old('email') }}">
                         <label for="email">Email</label>
+                        {{-- Error Message --}}
+                                @error('email')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Password--}}
                     <div class="form-floating mt-3 mb-3">
-                        <input type="password" class="form-control transparent-input" id="password" placeholder="Enter password" name="password" required>
+                        <input type="password" class="form-control transparent-input @error('password') is-invalid @enderror" id="password" placeholder="Enter password" name="password" required>
                         <label for="password">Password</label>
+                        {{-- Error Message --}}
+                                @error('password')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Show Password--}}
                     <div class="form-floating mt-3 mb-3">
@@ -53,7 +69,7 @@
                     <button type="submit" class="btn colorpink button-press-pink text-white btn-block"><strong>Register</strong></button>
                     </div>
                     <br>
-                    <p class="text-center">You have an account?   <a class="text-white" href="#" id="register"><strong>Login</strong></a></p>
+                    <p class="text-center">You have an account?   <a class="text-white" href="/login" id="register"><strong>Login</strong></a></p>
                 </form>
         </div>
     </div>

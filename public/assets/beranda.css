@@ -75,3 +75,11 @@ input.transparent-input{
     background-color:rgba(24, 24, 24, 0.326) !important;
     border:none !important;
 }
+.alert-transparent-background{
+    background-color:rgba(245, 66, 66, 0.605) !important;
+    border:none !important;
+}
+.alert-transparent-success{
+    background-color:rgba(86, 216, 66, 0.598) !important;
+    border:none !important;
+}

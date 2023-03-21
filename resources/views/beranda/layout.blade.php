@@ -21,8 +21,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
+
+            @auth
             <li class="nav-item">
-            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/">Home</a>
+            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
@@ -30,6 +32,27 @@
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
             </li>
+            <li class="nav-item">
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="btn alert-transparent-background text-white">Logout</button>
+                </form>
+            </li>
+            @else
+            <li class="nav-item">
+            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn transparent-background text-white" aria-current="page" href="/login"><strong>Login</strong></a>
+            </li>
+            @endauth
+
         </ul>
         </div>
     </div>
@@ -37,10 +60,10 @@
 <!-- Content -->
     <div class="container-fluid banner">
         <div class="container-fluid top">
-            
+
         @yield('content')
 
-        </div>  
+        </div>
     </div>
 </body>
 </html>

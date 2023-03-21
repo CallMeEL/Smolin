@@ -11,6 +11,21 @@
 </head>
 <body>
     <div class="container-fluid banner2">
+
+{{-- Alert --}}
+        @if (session('success'))
+            <div class="alert alert-transparent-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session('loginError'))
+            <div class="alert alert-transparent-background alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="row justify-content-center align-items-center">
             <div class="col-md-3">
                 <img style="width: 100%" src="{{ ('img/motor_header.png') }}" alt="">
@@ -21,17 +36,25 @@
                 <br>
                 <h2 class="text-center"><strong>Glad to see you again!</strong></h2>
                 <br>
-                <form action="#" method="POST">
+                <form action="/login" method="POST">
                     @csrf
 {{--Email--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control transparent-input" id="email" placeholder="Enter email" name="email" autofocus required>
+                        <input type="email" class="form-control transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" autofocus required value="{{ old('email') }}">
                         <label for="email">Email</label>
+                        {{-- Error Message --}}
+                                @error('email')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Password--}}
                     <div class="form-floating mt-3 mb-3">
                         <input type="password" class="form-control transparent-input" id="password" placeholder="Enter password" name="password" required>
                         <label for="password">Password</label>
+                        {{-- Error Message --}}
+                                @error('password')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
                     </div>
 {{--Show Password--}}
                     <div class="form-floating mt-3 mb-3">
@@ -43,7 +66,7 @@
                     <button type="submit" class="btn colorpink button-press-pink text-white btn-block"><strong>Login</strong></button>
                     </div>
                     <br>
-                    <p class="text-center">Don't have an account?   <a class="text-white" href="#" id="register"><strong>Register</strong></a></p>
+                    <p class="text-center">Don't have an account?   <a class="text-white" href="/register" id="register"><strong>Register</strong></a></p>
 
                 </form>
             </div>
