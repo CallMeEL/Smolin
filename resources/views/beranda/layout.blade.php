@@ -23,6 +23,7 @@
         <ul class="navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
 
             @auth
+
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
             </li>
@@ -38,7 +39,9 @@
                     <button type="submit" class="btn alert-transparent-background text-white">Logout</button>
                 </form>
             </li>
+
             @else
+
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
             </li>
@@ -51,6 +54,7 @@
             <li class="nav-item">
             <a class="btn transparent-background text-white" aria-current="page" href="/login"><strong>Login</strong></a>
             </li>
+
             @endauth
 
         </ul>
