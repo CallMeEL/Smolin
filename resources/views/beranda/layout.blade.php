@@ -55,6 +55,7 @@
             <a class="btn transparent-background text-white" aria-current="page" href="/login"><strong>Login</strong></a>
             </li>
 
+
             @endauth
 
         </ul>
