@@ -36,11 +36,24 @@
         <br>
         <br>
         <br>
+        @auth
+
         <a href="#">
             <button type="button" class="btn btn-info btn-lg text-white">
             <strong>Sewa Sekarang!</strong>
             </button>
         </a>
+
+        @else
+
+        <a href="/login">
+            <button type="button" class="btn btn-info btn-lg text-white">
+            <strong>Sewa Sekarang!</strong>
+            </button>
+        </a>
+
+        @endauth
+
     </div>
     <div class="col-md-3">
         <img style="width: 100%" src="{{ ('img/motor_header.png') }}" alt="">

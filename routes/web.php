@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SmolinController;
+use App\Http\Controllers\UpdateUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,23 +17,36 @@ use App\Http\Controllers\SmolinController;
 |
 */
 
-Route::get('/profile', function (){
-    return view('beranda.profile');
-});
+// Route::get('/profile', function () {
+//     return view('beranda.profile');
+// });
+
 //[+]============================================================[+]
 //                        Smolin Controller
 //[+]============================================================[+]
 
-Route::get('/home', [SmolinController::class, 'index']);
+Route::get('/home', [SmolinController::class, 'index'])
+    ->name('home');
 
 
+//[+]============================================================[+]
+//                     Update User Controller
+//[+]============================================================[+]
+
+Route::get('/profile', [UpdateUserController::class, 'edit'])
+    ->middleware('auth');
+
+Route::put('/update', [UpdateUserController::class, 'update'])
+    ->middleware('auth')
+    ->name('profile.update');
 
 //[+]============================================================[+]
 //                        Login Controller
 //[+]============================================================[+]
 
 Route::get('/login', [LoginController::class, 'index'])
-    ->middleware('guest');
+    ->middleware('guest')
+    ->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
