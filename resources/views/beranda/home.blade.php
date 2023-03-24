@@ -9,7 +9,36 @@
 
 {{-- Tampilan Home User --}}
 
-<div class="rox">
+<div class="row content-justify-center">
+
+    <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
+        <h1>Test</h1>
+    </div>
+
+    <div class="col-md-7">
+
+        <div class="row">
+
+            <div class="col-md-7 m-1 transparent-form-profile border-grey border-rounded">
+                <h1>Test</h1>
+            </div>
+            <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
+                <h1>Test</h1>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-7 m-1 transparent-form-profile border-grey border-rounded">
+                <h1>Test</h1>
+            </div>
+            <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
+                <h1>Test</h1>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
