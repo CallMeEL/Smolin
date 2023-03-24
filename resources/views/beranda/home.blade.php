@@ -7,9 +7,13 @@
 
 @auth
 
+{{-- Tampilan Home User --}}
+
 
 
 @else
+
+{{-- Tampilan Home Guest --}}
 
 <div class="row">
     <div class="col-md-1">
