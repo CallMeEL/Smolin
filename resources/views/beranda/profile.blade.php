@@ -12,11 +12,11 @@
 @endif
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 transparent-background3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 transparent-form-profile border-grey border-rounded">
 {{--Head--}}
                 <br>
-                <h2><strong>Your Profile</strong></h2>
+                <h2><strong>My Profile</strong></h2>
                 <br>
                 <form action="{{ route('profile.update') }}" method="POST">
                     @method("put")
