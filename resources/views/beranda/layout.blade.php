@@ -62,6 +62,19 @@
     </div>
     </nav>
 <!-- Content -->
+
+    @auth
+
+    <div class="container-fluid banner-auth">
+        <div class="container-fluid top">
+
+        @yield('content')
+
+        </div>
+    </div>
+
+    @else
+
     <div class="container-fluid banner">
         <div class="container-fluid top">
 
@@ -69,5 +82,7 @@
 
         </div>
     </div>
+
+    @endauth
 </body>
 </html>

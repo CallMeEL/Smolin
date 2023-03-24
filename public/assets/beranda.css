@@ -7,6 +7,15 @@
     padding-bottom: 30%;
     color: #fff;
 }
+.banner-auth {
+    width: auto;
+    background: url("bg.png")
+    no-repeat center center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 30%;
+    color: #fff;
+}
 @media only screen and (max-width: 480px){
     .banner {
         width: auto;
