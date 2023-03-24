@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_invoice');
+            $table->foreignId('id_user');
+            $table->foreignId('id_motor');
+            $table->string('nama_user');
+            $table->bigInteger('harga');
+            $table->date('tanggal_sewa');
             $table->timestamps();
         });
     }
