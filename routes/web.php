@@ -17,9 +17,9 @@ use App\Http\Controllers\UpdateUserController;
 |
 */
 
-// Route::get('/profile', function () {
-//     return view('beranda.profile');
-// });
+Route::get('/admin', function () {
+    return view('welcome');})
+    ->middleware('auth', 'admin');
 
 //[+]============================================================[+]
 //                        Smolin Controller

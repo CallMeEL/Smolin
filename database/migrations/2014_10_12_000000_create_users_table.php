@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('email')->unique();
             $table->string('no_ktp');
-            $table->string('status')->default('inactive');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

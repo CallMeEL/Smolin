@@ -19,11 +19,19 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if(Auth::attempt($credentials)){
+        //Jika user adalah admin
+        if (Auth::attempt($credentials) && Auth::user()->role_id == 1) {
+            $request->session()->regenerate();
+            return redirect()->intended('/admin');
+        }
+
+        //Jika user adalah user biasa
+        if (Auth::attempt($credentials) && Auth::user()->role_id == 2) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
 
+        //Jika gagal Login
         return back()->with('loginError', 'Login failed!');
     }
 
