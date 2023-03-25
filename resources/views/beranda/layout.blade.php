@@ -25,7 +25,7 @@
             @auth
 
             <li class="nav-item">
-            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
+            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
@@ -43,7 +43,7 @@
             @else
 
             <li class="nav-item">
-            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="/home">Home</a>
+            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>

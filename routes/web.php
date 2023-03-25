@@ -25,7 +25,7 @@ use App\Http\Controllers\UpdateUserController;
 //                        Smolin Controller
 //[+]============================================================[+]
 
-Route::get('/home', [SmolinController::class, 'index'])
+Route::get('/', [SmolinController::class, 'index'])
     ->name('home');
 
 
