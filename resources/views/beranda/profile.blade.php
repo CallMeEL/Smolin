@@ -50,8 +50,8 @@
                     </div>
 {{--No KTP--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="no_ktp" class="form-control transparent-input @error('no_ktp') is-invalid @enderror" id="no_ktp" placeholder="No KTP" name="no_ktp" required value="{{ old('no_ktp', Auth::user()->no_ktp) }}">
-                        <label for="no_ktp">No. KTP</label>
+                        <input type="no_ktp" class="form-control transparent-input @error('no_ktp') is-invalid @enderror" id="no_ktp" placeholder="No. KTP" name="no_ktp" required value="{{ old('no_ktp', Auth::user()->no_ktp) }}">
+                        <label for="no_ktp"><p class="text-white">No. KTP</p></label>
                         {{-- Error Message --}}
                                 @error('no_ktp')
                                     <div class="alert alert-transparent-background">{{ $message }}</div>

@@ -19,6 +19,7 @@ class RegisterController extends Controller
             'name' => 'required',
             'phone_number' => 'required|numeric',
             'email' => 'required|email:dns|unique:users',
+            'no_ktp' => 'required|numeric',
             'password' => 'required|min:8',
         ]);
 

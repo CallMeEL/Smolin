@@ -50,6 +50,15 @@
                                     <div class="alert alert-transparent-background">{{ $message }}</div>
                                 @enderror
                     </div>
+{{-- No. KTP --}}
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" class="form-control transparent-input @error('no_ktp') is-invalid @enderror" id="no_ktp" placeholder="Enter no. ktp" name="no_ktp" required value="{{ old('no_ktp') }}">
+                        <label for="no_ktp">No. KTP</label>
+                        {{-- Error Message --}}
+                                @error('no_ktp')
+                                    <div class="alert alert-transparent-background">{{ $message }}</div>
+                                @enderror
+                    </div>
 {{--Password--}}
                     <div class="form-floating mt-3 mb-3">
                         <input type="password" class="form-control transparent-input @error('password') is-invalid @enderror" id="password" placeholder="Enter password" name="password" required>
@@ -73,7 +82,7 @@
                 </form>
         </div>
     </div>
-    
+
 </div>
 </body>
 </html>
