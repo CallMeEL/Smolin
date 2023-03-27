@@ -123,3 +123,17 @@ input.transparent-input{
 .border-rounded{
     border-radius: 10px;
 }
+
+input[type="checkbox"] { 
+    position: relative; 
+    width: 150px; 
+    height: 40px; 
+    -webkit-appearance: none; 
+    background-color: #c6c6c600; 
+    outline: solid rgba(255, 255, 255, 0.379); 
+    border-radius: 20px; 
+} 
+
+input:checked[type="checkbox"]{ 
+    background-color: #fc2586e4; 
+}

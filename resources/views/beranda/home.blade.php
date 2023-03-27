@@ -12,11 +12,21 @@
 <div class="row content-justify-center">
 
     <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
-        <form method="post" action="{{--database--}}">
-            <input type="text" name="search" placeholder="cari disini">
-            <input type="submit" name="submit" value="search">
-        </form>
+        <div class="form-floating mb-3 mt-3">
+            <class="text-left"><h4>Cari Kota Tujuan</h4>
+                <p><input type="kota" class="form-control transparent-input @error('kota') is-invalid @enderror" id="kota" name="kota" autofocus required value="{{ old('kota') }}">
+                    <form method="post" action="2023_03_25_072710_create_motors_table"></p>
+                    <class="text-left"><h4>Merek Kendaraan</h4>
+                    <form> <input type="checkbox"> </form>
+                    <class="text-left"><h4>Jenis Kendaraan</h4>
+                    <form> <input type="checkbox"> </form>
+                    <class="text-left"><h4>Harga Kisaran</h4>
+                    <form> <input type="checkbox"> </form>
+                <p><p><input type="submit" class="btn colorpink button-press-pink text-white btn-block" name="submit" value="search"></p></p>
+            </form>
+        </div>
     </div>
+
 
     <div class="col-md-7">
 
