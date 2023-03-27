@@ -12,7 +12,10 @@
 <div class="row content-justify-center">
 
     <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
-        <h1>Test</h1>
+        <form method="post" action="{{--database--}}">
+            <input type="text" name="search" placeholder="cari disini">
+            <input type="submit" name="submit" value="search">
+        </form>
     </div>
 
     <div class="col-md-7">
