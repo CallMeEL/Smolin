@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SmolinController;
 use App\Http\Controllers\UpdateUserController;
+use App\Http\Controllers\AdminMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,8 @@ use App\Http\Controllers\UpdateUserController;
 |
 */
 
-Route::get('/admin', function () {
-    return view('welcome');})
-    ->middleware('auth', 'admin');
+// Route::get('/test', function () {
+//     return view('admin.dashboard');});
 
 //[+]============================================================[+]
 //                        Smolin Controller
@@ -28,6 +28,13 @@ Route::get('/admin', function () {
 Route::get('/', [SmolinController::class, 'index'])
     ->name('home');
 
+
+//[+]============================================================[+]
+//                     Admin Menu Controller
+//[+]============================================================[+]
+
+Route::get('/admin', [AdminMenuController::class, 'index'])
+    ->middleware('auth', 'admin');
 
 //[+]============================================================[+]
 //                     Update User Controller
