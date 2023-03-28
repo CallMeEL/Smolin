@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SmolinController;
 use App\Http\Controllers\UpdateUserController;
 use App\Http\Controllers\AdminMenuController;
+use App\Http\Controllers\MotorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,13 @@ Route::get('/admin', [AdminMenuController::class, 'index'])
     ->middleware('auth', 'admin')
     ->name('admin');
 
-Route::get('/admin/create', [AdminMenuController::class, 'create'])
+//[+]============================================================[+]
+//                       Motor Controller
+//[+]============================================================[+]
+
+Route::get('/motor', [MotorController::class, 'create'])
     ->middleware('auth', 'admin')
-    ->name('admin.create-motor');
+    ->name('motor');
 
 //[+]============================================================[+]
 //                     Update User Controller

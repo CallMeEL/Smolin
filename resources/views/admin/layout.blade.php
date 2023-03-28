@@ -53,8 +53,8 @@
                         </a>
 
                         <div class="sb-sidenav-menu-heading">Vehicle</div>
-                        <a class="nav-link @yield('menuCreateMotor')" href="{{ route('admin.create-motor') }}">
-                            <div class="sb-nav-link-icon"><i class="bi bi-plus-circle-fill"></i></i></div>
+                        <a class="nav-link @yield('menuCreateMotor')" href="{{ route('motor') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-plus-circle-fill"></i></div>
                             Tambah Motor
                         </a>
 
