@@ -37,6 +37,10 @@ Route::get('/admin', [AdminMenuController::class, 'index'])
     ->middleware('auth', 'admin')
     ->name('admin');
 
+Route::get('/admin/create', [AdminMenuController::class, 'create'])
+    ->middleware('auth', 'admin')
+    ->name('admin.create-motor');
+
 //[+]============================================================[+]
 //                     Update User Controller
 //[+]============================================================[+]

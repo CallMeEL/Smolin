@@ -10,4 +10,9 @@ class AdminMenuController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function create()
+    {
+        return view('admin.create-motor');
+    }
 }

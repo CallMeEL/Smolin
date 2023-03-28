@@ -44,19 +44,25 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
 
-                        <h3 class="text-center">Admin</h3>
+                        <h3 class="text-center text-white">Menu Admin</h3>
 
                         <div class="sb-sidenav-menu-heading">Menu</div>
-                        <a class="nav-link @yield('menuDashboard')" href="index.html">
+                        <a class="nav-link @yield('menuDashboard')" href="{{ route('admin') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
+                        </a>
+
+                        <div class="sb-sidenav-menu-heading">Vehicle</div>
+                        <a class="nav-link @yield('menuCreateMotor')" href="{{ route('admin.create-motor') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-plus-circle-fill"></i></i></div>
+                            Tambah Motor
                         </a>
 
                     </div>
                 </div>
 
                 {{-- Login Admin Information --}}
-                <div class="sb-sidenav-footer text-capitalize">
+                <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
                     {{ auth()->user()->name }}
                 </div>
@@ -69,18 +75,7 @@
                 @yield('content')
 
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+
         </div>
     </div>
 </body>
