@@ -13,26 +13,23 @@
 
     <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
         <div class="form-floating mb-3 mt-3">
-            <class="text-left">
+
                 <h4>Cari Kota Tujuan</h4>
-                <p><input type="kota" class="form-control transparent-input @error('kota') is-invalid @enderror"
-                        id="kota" name="kota" autofocus required value="{{ old('kota') }}">
+                <p><input type="kota" class="form-control transparent-input" id="kota" name="kota" autofocus required></p>
                 <form method="post" action="#">
                     @csrf
-                    </p>
-                    <class="text-left">
                         <h4>Merek Kendaraan</h4>
                         <form> <input type="checkbox"> </form>
-                        <class="text-left">
-                            <h4>Jenis Kendaraan</h4>
-                            <form> <input type="checkbox"> </form>
-                            <class="text-left">
-                                <h4>Harga Kisaran</h4>
-                                <form> <input type="checkbox"> </form>
-                                <p>
-                                <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
-                                        name="submit" value="search"></p>
-                                </p>
+
+                        <h4>Jenis Kendaraan</h4>
+                        <form> <input type="checkbox"> </form>
+
+                        <h4>Harga Kisaran</h4>
+                        <form> <input type="checkbox"> </form>
+
+                        <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
+                        name="submit" value="search"></p>
+
                 </form>
         </div>
     </div>

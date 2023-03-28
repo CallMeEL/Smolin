@@ -25,6 +25,14 @@
 
             @auth
 
+            @can('admin')
+
+            <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('admin') }}">Admin</a>
+            </li>
+
+            @endcan
+
             <li class="nav-item">
             <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>

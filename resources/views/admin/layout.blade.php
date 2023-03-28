@@ -56,7 +56,7 @@
                 </div>
 
                 {{-- Login Admin Information --}}
-                <div class="sb-sidenav-footer">
+                <div class="sb-sidenav-footer text-capitalize">
                     <div class="small">Logged in as:</div>
                     {{ auth()->user()->name }}
                 </div>

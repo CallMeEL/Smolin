@@ -34,7 +34,8 @@ Route::get('/', [SmolinController::class, 'index'])
 //[+]============================================================[+]
 
 Route::get('/admin', [AdminMenuController::class, 'index'])
-    ->middleware('auth', 'admin');
+    ->middleware('auth', 'admin')
+    ->name('admin');
 
 //[+]============================================================[+]
 //                     Update User Controller
