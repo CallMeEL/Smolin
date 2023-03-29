@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Motor;
+use App\Models\User;
 
 class AdminMenuController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $totalMotor = Motor::count();
+
+        $totalUser = User::where('role_id', '2')->count();
+
+        return view('admin.dashboard', compact('totalMotor', 'totalUser'));
     }
 
 }

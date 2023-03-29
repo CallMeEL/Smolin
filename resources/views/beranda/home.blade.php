@@ -34,29 +34,62 @@
         </div>
     </div>
 
-
     <div class="col-md-7">
 
+    @forelse ($motors as $motor)
+
         <div class="row">
 
             <div class="col-md-7 m-1 transparent-form-profile border-grey border-rounded">
-                <h1>Test</h1>
+
+                <div class="row">
+
+                    <div class="col-4">
+                        <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="border-rounded mt-3" style="width: 150px">
+                    </div>
+
+                    <div class="col-6 mx-2 mt-1">
+                        <h4>{{ $motor->nama_motor }}</h4>
+                        <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp.{{ $motor->harga_motor }} /hari</strong></p>
+                    </div>
+
+                </div>
+
             </div>
             <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
-                <h1>Test</h1>
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="text-center">Pilih Tanggal</h4>
+                        <form method="post" action="">{{-- {{ route('beranda.pesan', $motor->id) }} --}}
+                            @csrf
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control transparent-input" id="tanggal_mulai" name="tanggal_mulai" autofocus required>
+                                <label for="tanggal_mulai">Tanggal Mulai</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control transparent-input" id="tanggal_selesai" name="tanggal_selesai" autofocus required>
+                                <label for="tanggal_selesai">Tanggal Selesai</label>
+                            </div>
+                            <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
+                            name="submit" value="Pesan"></p>
+                        </form>
+                    </div>
+                </div>
             </div>
 
         </div>
+
+    @empty
+
         <div class="row">
 
-            <div class="col-md-7 m-1 transparent-form-profile border-grey border-rounded">
-                <h1>Test</h1>
-            </div>
-            <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
-                <h1>Test</h1>
+            <div class="col-md-11 m-1 transparent-form-profile border-grey border-rounded">
+                <p class="text-center m-2">Tidak ada Data...</p>
             </div>
 
         </div>
+
+    @endforelse
 
     </div>
 
