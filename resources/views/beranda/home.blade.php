@@ -63,15 +63,15 @@
                         <form method="post" action="">{{-- {{ route('beranda.pesan', $motor->id) }} --}}
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control transparent-input" id="tanggal_mulai" name="tanggal_mulai" autofocus required>
-                                <label for="tanggal_mulai">Tanggal Mulai</label>
+                                <input type="date" class="form-control transparent-input" id="rent_date" name="rent-date"  required>
+                                <label for="rent_date">Tanggal Mulai</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control transparent-input" id="tanggal_selesai" name="tanggal_selesai" autofocus required>
-                                <label for="tanggal_selesai">Tanggal Selesai</label>
+                                <input type="date" class="form-control transparent-input" id="return_date" name="return_date" required>
+                                <label for="return_date">Tanggal Selesai</label>
                             </div>
                             <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
-                            name="submit" value="Pesan"></p>
+                            name="submit" value="Booking"></p>
                         </form>
                     </div>
                 </div>

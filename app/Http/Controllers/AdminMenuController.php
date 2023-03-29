@@ -14,7 +14,9 @@ class AdminMenuController extends Controller
 
         $totalUser = User::where('role_id', '2')->count();
 
-        return view('admin.dashboard', compact('totalMotor', 'totalUser'));
+        $totalSewa = Motor::where('status', 'unavailable')->count();
+
+        return view('admin.dashboard', compact('totalMotor', 'totalUser', 'totalSewa'));
     }
 
 }
