@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Motor extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nama_motor',
+        'tipe_motor',
+        'gambar_motor',
+        'harga_motor',
+    ];
 }

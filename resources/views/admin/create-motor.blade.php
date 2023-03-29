@@ -6,8 +6,16 @@
 
 <div class="container">
 
+{{-- Alert --}}
+@if (session('success'))
+    <div class="alert bg-success text-white alert-dismissible my-2 fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 {{-- Form Tambah Motor --}}
-<form action="#" method="post">
+<form action="{{ route('motor.store') }}" method="post" enctype="multipart/form-data">
 
     @csrf
     <div class="card my-3">
@@ -23,21 +31,29 @@
                 {{-- Nama Motor --}}
                 <div class="col-6">
                     <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" id="nama_motor" placeholder="Nama Motor" name="nama_motor" autofocus required>
+                        <input type="text" class="form-control @error('nama-motor') is-invalid @enderror" id="nama_motor" placeholder="Nama Motor" name="nama_motor" autofocus required value="{{ old('nama_motor') }}">
                         <label for="nama_motor">Nama Motor</label>
+                        {{-- Error Message --}}
+                        @error('nama_motor')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
                 {{-- Tipe Motor --}}
                 <div class="col-6">
                     <div class="form-floating mb-3 mt-3">
-                        <select class="form-control" name="tipe_motor" id="tipe_motor">
+                        <select class="form-control @error('tipe_motor') is-invalid @enderror" name="tipe_motor" id="tipe_motor" value="{{ old('tipe_motor') }}">
                             <option value="">--Pilih--</option>
                             <option value="Bebek">Bebek</option>
                             <option value="Matic">Matic</option>
                             <option value="Kopling">Kopling</option>
                         </select>
                         <label for="tipe_motor">Tipe Motor</label>
+                        {{-- Error Message --}}
+                        @error('tipe_motor')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
@@ -47,8 +63,12 @@
             <div class="row">
                 <div class="col-8">
                     <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" id="harga_motor" placeholder="Harga Sewa" name="harga_motor" required>
-                        <label for="Harga_motor">Harga Sewa</label>
+                        <input type="text" class="form-control @error('harga_motor') is-invalid @enderror" id="harga_motor" placeholder="Harga Sewa" name="harga_motor" required value="{{ old('harga_motor') }}">
+                        <label for="harga_motor">Harga Sewa/hari</label>
+                        {{-- Error Message --}}
+                        @error('harga_motor')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -59,6 +79,10 @@
                     <div class="mb-3 mt-3">
                         <label for="gambar_motor" >Gambar Motor :</label>
                         <input type="file" class="form-control" id="gambar_motor" placeholder="Gambar Motor" name="gambar_motor" accept="image/gif, image/jpeg, image/png" required>
+                        {{-- Error Message --}}
+                        @error('gambar_motor')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>

@@ -46,6 +46,10 @@ Route::get('/motor', [MotorController::class, 'create'])
     ->middleware('auth', 'admin')
     ->name('motor');
 
+Route::post('/motor', [MotorController::class, 'store'])
+    ->middleware('auth', 'admin')
+    ->name('motor.store');
+
 //[+]============================================================[+]
 //                     Update User Controller
 //[+]============================================================[+]
