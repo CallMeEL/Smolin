@@ -6,12 +6,12 @@
 @section('content')
 
 @auth
-
 {{-- Tampilan Home User --}}
+
 <link rel="stylesheet" href="{{ ('assets/home-user.css') }}">
 <div class="row content-justify-center">
 
-    <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
+    <div class="col-md-5 m-5 transparent-form-profile border-grey border-rounded">
         <div class="form-floating mb-3 mt-3">
 
                 <h4>Cari Kota Tujuan</h4>
@@ -40,20 +40,20 @@
 
         <div class="row">
 
-            <div class="col-md-10 m-1 transparent-form-profile border-grey border-rounded">
+                <div class="col-md-10 m-5 transparent-form-profile border-grey border-rounded center">
 
-                <div class="row">
+                    <div class="row">
+    
+                        <div class="col-4">
+                            <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="border-rounded mt-3" style="width: 150px">
+                        </div>
+    
+                        <div class="col-6 mx-2 mt-1">
+                            <h4>{{ $motor->nama_motor }}</h4>
+                            <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
+                        </div>
 
-                    <div class="col-4">
-                        <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="border-rounded mt-3" style="width: 150px">
-                    </div>
-
-                    <div class="col-6 mx-2 mt-1">
-                        <h4>{{ $motor->nama_motor }}</h4>
-                        <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
-                    </div>
-
-                </div>
+            
 
             </div>
             {{-- <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
