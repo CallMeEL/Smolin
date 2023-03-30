@@ -94,9 +94,5 @@
 
     @endauth
 
-    <footer class="container-fluid bg-dark text-white text-center pt-5 pb-5">
-        All Rights Reserved &copy; 2023
-    </footer>
-
 </body>
 </html>

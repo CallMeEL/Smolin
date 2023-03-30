@@ -34,13 +34,13 @@
         </div>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-5">
 
     @forelse ($motors as $motor)
 
         <div class="row">
 
-            <div class="col-md-7 m-1 transparent-form-profile border-grey border-rounded">
+            <div class="col-md-10 m-1 transparent-form-profile border-grey border-rounded">
 
                 <div class="row">
 
@@ -50,18 +50,18 @@
 
                     <div class="col-6 mx-2 mt-1">
                         <h4>{{ $motor->nama_motor }}</h4>
-                        <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp.{{ $motor->harga_motor }} /hari</strong></p>
+                        <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
                     </div>
 
                 </div>
 
             </div>
-            <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
+            {{-- <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
                 <div class="row">
                     <div class="col-12">
                         <h4 class="text-center">Pilih Tanggal</h4>
                         <form method="post" action="">{{-- {{ route('motor.show', $motor->id) }} --}}
-                            @csrf
+                            {{-- @csrf
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control transparent-input" id="rent_date" name="rent-date"  required>
                                 <label for="rent_date">Tanggal Mulai</label>
@@ -75,7 +75,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 
