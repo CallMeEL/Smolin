@@ -60,7 +60,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h4 class="text-center">Pilih Tanggal</h4>
-                        <form method="post" action="">{{-- {{ route('beranda.pesan', $motor->id) }} --}}
+                        <form method="post" action="">{{-- {{ route('motor.show', $motor->id) }} --}}
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control transparent-input" id="rent_date" name="rent-date"  required>

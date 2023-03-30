@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Motor;
+use App\Models\Rent;
 
 class MotorController extends Controller
 {
@@ -31,6 +32,15 @@ class MotorController extends Controller
 
     }
 
+    public function show(Motor $motor)
+    {
+        $result = Motor::find($motor->id);
+        if ($result->status == 'available') {
+            return view('beranda.sewa-motor', compact('result'));
+        } else {
+            return redirect('/');
+        }
 
+    }
 
 }
