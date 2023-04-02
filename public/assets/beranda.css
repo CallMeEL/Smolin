@@ -11,8 +11,8 @@
     width: auto;
     background: url("bg.png") no-repeat center center;
     background-size: cover;
-    padding-top: 20%;
-    padding-bottom: 30%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: #fff;
 }
 @media only screen and (max-width: 480px) {
@@ -32,6 +32,10 @@
     padding-top: 5%;
     padding-bottom: 15%;
     color: #fff;
+}
+
+.bannercolor{
+    background-color: #364f6b;
 }
 
 .top {
@@ -121,8 +125,3 @@ input.transparent-input {
     border-radius: 10px;
 }
 
-.center {
-    margin: auto;
-    width: 100%;
-    padding: 10px;
-}

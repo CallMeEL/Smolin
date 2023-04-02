@@ -9,90 +9,109 @@
 {{-- Tampilan Home User --}}
 
 <link rel="stylesheet" href="{{ ('assets/home-user.css') }}">
-<div class="row content-justify-center">
 
-    <div class="col-md-5 m-5 transparent-form-profile border-grey border-rounded">
+<div class="container-fluid banner-auth">
+    <h2 class="text-center"><strong>Silahkan Pilih Motor yang Anda Butuhkan</strong></h2>
+</div>
+
+<div class="container-fluid">
+<div class="row bg-dark d-flex content-justify-center text-white">
+
+    <div class="col-2"></div>
+
+    <div class="col-8 my-5 transparent-form-profile border-grey border-rounded">
         <div class="form-floating mb-3 mt-3">
 
-                <h4>Cari Kota Tujuan</h4>
-                <p><input type="kota" class="form-control transparent-input" id="kota" name="kota" autofocus required></p>
-                <form method="post" action="#">
+                <form method="post" action="">
                     @csrf
-                        <h4>Merek Kendaraan</h4>
-                        <form> <input type="checkbox"> </form>
+                        <div class="row">
 
-                        <h4>Jenis Kendaraan</h4>
-                        <form> <input type="checkbox"> </form>
+                            {{-- Nama Kendaraan --}}
+                            <div class="col-6">
+                                <h4>Nama Kendaraan</h4>
 
-                        <h4>Harga Kisaran</h4>
-                        <form> <input type="checkbox"> </form>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Kendaraan" aria-label="Nama Kendaraan" aria-describedby="basic-addon1">
+                                </div>
 
-                        <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
-                        name="submit" value="search"></p>
+                            </div>
+
+                            {{-- Transmisi --}}
+                            <div class="col-6">
+                                <h4>Transmisi</h4>
+
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="inputGroupSelect01">
+                                        <option selected>--Pilih--</option>
+                                        <option value="Bebek">Bebek</option>
+                                        <option value="Matic">Matic</option>
+                                        <option value="Kopling">Kopling</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            {{-- Harga Kisaran --}}
+                            <h4>Harga Kisaran</h4>
+                            <div class="col-6">
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    <input type="text" class="form-control" placeholder="Harga Min" aria-label="Harga Min" aria-describedby="basic-addon1">
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    <input type="text" class="form-control" placeholder="Harga Max" aria-label="Harga Max" aria-describedby="basic-addon1">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block" name="submit" value="Search"></p>
 
                 </form>
         </div>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-2"></div>
+
+    <div class="row my-5">
 
     @forelse ($motors as $motor)
 
-        <div class="row">
-
-                <div class="col-md-10 m-5 transparent-form-profile border-grey border-rounded center">
-
-                    <div class="row">
-    
-                        <div class="col-4">
-                            <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="border-rounded mt-3" style="width: 150px">
-                        </div>
-    
-                        <div class="col-6 mx-2 mt-1">
-                            <h4>{{ $motor->nama_motor }}</h4>
-                            <p>Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
-                        </div>
-
-            
-
-            </div>
-            {{-- <div class="col-md-4 m-1 transparent-form-profile border-grey border-rounded">
-                <div class="row">
-                    <div class="col-12">
-                        <h4 class="text-center">Pilih Tanggal</h4>
-                        <form method="post" action="">{{-- {{ route('motor.show', $motor->id) }} --}}
-                            {{-- @csrf
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control transparent-input" id="rent_date" name="rent-date"  required>
-                                <label for="rent_date">Tanggal Mulai</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control transparent-input" id="return_date" name="return_date" required>
-                                <label for="return_date">Tanggal Selesai</label>
-                            </div>
-                            <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block"
-                            name="submit" value="Booking"></p>
-                        </form>
-                    </div>
+        <div class="col-2 mx-2">
+            <div class="card transparent-form-profile border-grey border-rounded">
+                <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">{{ $motor->nama_motor }}</h3>
+                    <p class="card-text">Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
                 </div>
-            </div> --}}
-
+                <div class="card-footer">
+                    <a href="{{ route('motor.show', $motor->id) }}" class="btn colorpink button-press-pink text-white btn-block">Sewa</a>
+                </div>
+            </div>
         </div>
 
     @empty
 
-        <div class="row">
-
-            <div class="col-md-11 m-1 transparent-form-profile border-grey border-rounded">
-                <p class="text-center m-2">Tidak ada Data...</p>
-            </div>
-
+        <div class="col-md-12 m-1 transparent-form-profile border-grey border-rounded">
+            <p class="text-center m-2">Tidak ada Data...</p>
         </div>
 
     @endforelse
 
     </div>
 
+</div>
 </div>
 
 @else
