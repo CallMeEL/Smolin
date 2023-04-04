@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ 'assets/home-user.css' }}">
         <div class="row content-justify-center">
 
@@ -22,71 +21,17 @@
                             required></p>
                     <form method="post" action="#">
                         @csrf
-
-
                         <h4>Merek Kendaraan</h4>
-                        <div class="form-group">
-                            <select id="merek" name="merek[]" class="form-control" multiple="multiple">
-                                <option value=""></option>
-                                <option value="Matic">Honda</option>
-                                <option value="Bebek">Yamaha</option>
-                                <option value="Kopling">Kawasaki</option>
-                            </select>
-                        </div>
-
-                        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $("#merek").select2({
-                                    placeholder: "Silahkan Pilih Merek Kendaraan"
-                                });
-                            });
-                        </script>
+                        <form> <input type="checkbox"> </form>
 
                         <h4>Jenis Kendaraan</h4>
-                        <div class="form-group">
-                            <select id="jenis" name="jenis[]" class="form-control" multiple="multiple">
-                                <option value=""></option>
-                                <option value="Matic">Matic</option>
-                                <option value="Bebek">Bebek</option>
-                                <option value="Kopling">Kopling</option>
-                            </select>
-                        </div>
+                        <form> <input type="checkbox"> </form>
 
-                        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $("#jenis").select2({
-                                    placeholder: "Silahkan Pilih Jenis Kendaraan"
-                                });
-                            });
-                        </script>
+                        <h4>Harga Kisaran</h4>
+                        <form> <input type="checkbox"> </form>
 
-                        <h4>Harga Kendaraan</h4>
-                        <div class="form-group">
-                            <select id="harga" name="harga[]" class="form-control" multiple="multiple">
-                                <option value=""></option>
-                                <option value="50k">0-50k</option>
-                                <option value="100k">50k-100k</option>
-                                <option value="150k">100k-150o</option>
-                            </select>
-                        </div>
-
-                        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $("#harga").select2({
-                                    placeholder: "Silahkan Pilih Harga Kisaran Kendaraan"
-                                });
-                            });
-                        </script>
-
-                        <br>
                         <p><input type="submit" class="btn colorpink button-press-pink text-white btn-block" name="submit"
-                                value="Cari sekarang!"></p>
+                                value="search"></p>
 
                     </form>
                 </div>

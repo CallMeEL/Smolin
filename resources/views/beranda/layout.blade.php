@@ -74,13 +74,8 @@
 
     @auth
 
-    <div class="container-fluid banner-auth">
-        <div class="container-fluid top">
-
         @yield('content')
 
-        </div>
-    </div>
 
     @else
 
@@ -93,6 +88,11 @@
     </div>
 
     @endauth
+
+    {{-- Footer --}}
+    <footer class="container-fluid text-center pt-5 pb-5">
+        All Rights Reserved &copy; 2023
+    </footer>
 
 </body>
 </html>

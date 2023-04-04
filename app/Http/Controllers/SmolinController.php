@@ -14,4 +14,10 @@ class SmolinController extends Controller
 
         return view('beranda.home', compact('motors'));
     }
+
+    public function filter()
+    {
+        //show motor data based on the filter that user want
+
+    }
 }
