@@ -34,7 +34,7 @@
     color: #fff;
 }
 
-.bannercolor{
+.bannercolor {
     background-color: #364f6b;
 }
 
@@ -126,3 +126,11 @@ input.transparent-input {
     border-radius: 10px;
 }
 
+input[type="date"] {
+    background-color: #bab9b996;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
