@@ -43,4 +43,9 @@ class MotorController extends Controller
 
     }
 
+    public function rent(Request $request, Motor $motor)
+    {
+
+    }
+
 }
