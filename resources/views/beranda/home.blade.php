@@ -156,7 +156,6 @@
         <br>
         <br>
         <br>
-        {{-- Login Button --}}
         <a href="/login">
             <button type="button" class="btn btn-info btn-lg text-white">
                 <strong>Sewa Sekarang!</strong>
