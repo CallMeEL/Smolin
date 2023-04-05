@@ -61,6 +61,14 @@
 
     <div class="row align-items-center">
 
+        {{-- Alert--}}
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible my-2 show">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card transparent-form-profile border-grey border-rounded">
             <div class="card-header">
                 {{-- Gambar Motor --}}
@@ -90,12 +98,20 @@
                                 <input type="date" class="form-control" id="rent_date" placeholder="Tanggal Sewa" name="rent_date">
                                 <label for="rent_date">Tanggal Sewa</label>
                             </div>
+                            {{-- Error Message --}}
+                            @error('rent_date')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control" id="return_date" placeholder="Tanggal Kembali" name="return_date">
                                 <label for="return_date">Tanggal Kembali</label>
                             </div>
+                            {{-- Error Message --}}
+                            @error('return_date')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     <button type="submit" class="btn btn-danger">Sewa</button>
                 </form>

@@ -11,6 +11,14 @@
 <link rel="stylesheet" href="{{ ('assets/home-user.css') }}">
 
 <div class="container-fluid banner-auth">
+    {{-- Alert --}}
+    @if (session('success'))
+        <div class="alert bg-warning text-white alert-dismissible my-2 fade show">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    <br>
     <h2 class="text-center"><strong>Silahkan Pilih Motor yang Anda Butuhkan</strong></h2>
 </div>
 
