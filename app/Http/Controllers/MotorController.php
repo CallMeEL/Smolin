@@ -72,6 +72,12 @@ class MotorController extends Controller
             return redirect('/motor/' . $motor->id);
         }
 
+        // Jika sewa dan kembali di tanggal yang sama, maka tidak bisa menyewa
+        if ($validateData['rent_date'] == $validateData['return_date']) {
+            $request->session()->flash('error', 'Tanggal Sewa dan Tanggal Kembali tidak boleh sama!');
+            return redirect('/motor/' . $motor->id);
+        }
+
         $validateData['motor_id'] = $motor->id;
         $validateData['user_id'] = auth()->user()->id;
 

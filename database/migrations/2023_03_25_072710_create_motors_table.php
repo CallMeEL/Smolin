@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_motor');
             $table->string('tipe_motor');
-            $table->string('harga_motor');
+            $table->bigInteger('harga_motor');
             $table->string('gambar_motor');
             $table->string('status')->default('available');
             $table->timestamps();
