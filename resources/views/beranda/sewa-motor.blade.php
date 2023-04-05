@@ -102,8 +102,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="rent_date" placeholder="Tanggal Sewa"
-                                        name="rent_date">
+                                    <input type="date" class="form-control" id="rent_date"
+                                        placeholder="Tanggal Sewa" name="rent_date" value="{{ date('Y-m-d') }}">
                                     <label for="rent_date">Tanggal Sewa</label>
                                 </div>
                                 {{-- Error Message --}}
@@ -114,7 +114,7 @@
                             <div class="col">
                                 <div class="form-floating mb-3">
                                     <input type="date" class="form-control" id="return_date"
-                                        placeholder="Tanggal Kembali" name="return_date">
+                                        placeholder="Tanggal Kembali" name="return_date" value="{{ date('Y-m-d') }}">
                                     <label for="return_date">Tanggal Kembali</label>
                                 </div>
                                 {{-- Error Message --}}
