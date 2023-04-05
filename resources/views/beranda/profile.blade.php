@@ -4,6 +4,9 @@
 
 @section('content')
 
+<div class="container-fluid banner">
+    <div class="container-fluid top">
+
 @if (session('success'))
     <div class="alert alert-transparent-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -64,6 +67,9 @@
                     <br>
                 </form>
         </div>
+    </div>
+</div>
+
     </div>
 </div>
 
