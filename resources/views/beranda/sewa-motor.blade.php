@@ -83,6 +83,20 @@
                 {{-- Tombol Sewa --}}
                 <form action="" method="POST">
                     @csrf
+                    {{-- Tanggal Sewa dan Tanggal Kembali --}}
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="rent_date" placeholder="Tanggal Sewa" name="rent_date">
+                                <label for="rent_date">Tanggal Sewa</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="return_date" placeholder="Tanggal Kembali" name="return_date">
+                                <label for="return_date">Tanggal Kembali</label>
+                            </div>
+                        </div>
                     <button type="submit" class="btn btn-danger">Sewa</button>
                 </form>
             </div>

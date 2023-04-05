@@ -54,6 +54,10 @@ Route::get('/motor/{motor}', [MotorController::class, 'show'])
     ->middleware('auth')
     ->name('motor.show');
 
+Route::post('/motor/{motor}', [MotorController::class, 'rent'])
+    ->middleware('auth')
+    ->name('motor.rent');
+
 //[+]============================================================[+]
 //                     Update User Controller
 //[+]============================================================[+]
