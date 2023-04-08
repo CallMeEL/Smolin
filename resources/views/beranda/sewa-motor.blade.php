@@ -32,23 +32,30 @@
                 <ul class="navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
 
                     @auth
-
+                        {{-- Menu Admin --}}
                         @can('admin')
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('admin') }}">Admin</a>
                             </li>
                         @endcan
-
+                        {{-- Menu Home --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuHome')" aria-current="page"
                                 href="{{ route('home') }}">Home</a>
                         </li>
+                        {{-- Menu Order --}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page" href="{{ route('order') }}">Order</a>
+                        </li>
+                        {{-- Menu Profile --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
                         </li>
+                        {{-- Menu Contact --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
                         </li>
+                        {{-- Tombol Logout --}}
                         <li class="nav-item">
                             <form action="/logout" method="POST">
                                 @csrf
@@ -91,7 +98,7 @@
                     </h3>
                     {{-- Harga --}}
                     <h3 class="card-title">
-                        Harga : <strong>{{ $result->harga_motor }} /hari</strong>
+                        Harga : <strong>{{ number_format($result->harga_motor, 2) }} /hari</strong>
                     </h3>
                 </div>
                 <div class="card-footer">

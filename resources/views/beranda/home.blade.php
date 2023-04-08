@@ -105,7 +105,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title">{{ $motor->nama_motor }}</h3>
                                     <p class="card-text">Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga
-                                        Sewa: <br> <strong>Rp. {{ $motor->harga_motor }} /hari</strong></p>
+                                        Sewa: <br> <strong>Rp. {{ number_format($motor->harga_motor, 2) }} </strong>/hari</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ route('motor.show', $motor->id) }}"

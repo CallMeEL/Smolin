@@ -5,15 +5,35 @@ namespace App\Http\Controllers;
 use App\Models\Invoice;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
+use App\Models\Motor;
+use App\Models\RentLog;
 
 class InvoiceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan Invoice dari User.
      */
     public function index()
     {
-        //
+        //Join tabel invoice, dan motor
+        $invoices = Invoice::join('motors', 'motors.id', '=', 'invoices.motor_id')
+            ->where('user_id', auth()->user()->id)
+            ->get([
+                'invoices.id',
+                'invoices.invoice_id',
+                'invoices.user_id',
+                'invoices.motor_id',
+                'invoices.rent_date',
+                'invoices.return_date',
+                'invoices.total_price',
+                'invoices.payment_status',
+                'invoices.payment_proof',
+                'motors.nama_motor',
+                'motors.tipe_motor',
+                'motors.gambar_motor',
+            ]);
+
+        return view('beranda.order', compact('invoices'));
     }
 
     /**
@@ -61,6 +81,11 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice)
     {
-        //
+        //Menghapus invoice berdasarkan Id
+        Invoice::destroy($invoice->id)
+            ? session()->flash('success', 'Invoice berhasil dihapus!')
+            : session()->flash('error', 'Invoice gagal dihapus!');
+        // Return to /order/{invoice} and next to /order
+        return back();
     }
 }

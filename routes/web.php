@@ -7,6 +7,7 @@ use App\Http\Controllers\SmolinController;
 use App\Http\Controllers\UpdateUserController;
 use App\Http\Controllers\AdminMenuController;
 use App\Http\Controllers\MotorController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,18 @@ Route::get('/motor/{motor}', [MotorController::class, 'show'])
 Route::post('/motor/{motor}', [MotorController::class, 'rent'])
     ->middleware('auth')
     ->name('motor.rent');
+
+//[+]============================================================[+]
+//                      Invoice Controller
+//[+]============================================================[+]
+
+Route::get('/order', [InvoiceController::class, 'index'])
+    ->middleware('auth')
+    ->name('order');
+
+Route::delete('/order/{invoice}', [InvoiceController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('order.destroy');
 
 //[+]============================================================[+]
 //                     Update User Controller

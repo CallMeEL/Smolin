@@ -32,22 +32,30 @@
 
                     @auth
 
+                        {{-- Menu Admin --}}
                         @can('admin')
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('admin') }}">Admin</a>
                             </li>
                         @endcan
 
+                        {{-- Menu Home --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuHome')" aria-current="page"
-                                href="{{ route('home') }}">Home</a>
+                            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
+                        {{-- Menu Order --}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page" href="{{ route('order') }}">Order</a>
+                        </li>
+                        {{-- Menu Profile --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
                         </li>
+                        {{-- Menu Contact --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
                         </li>
+                        {{-- Tombol Logout --}}
                         <li class="nav-item">
                             <form action="/logout" method="POST">
                                 @csrf
@@ -55,16 +63,23 @@
                             </form>
                         </li>
                     @else
+                        {{-- Menu Home --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuHome')" aria-current="page"
-                                href="{{ route('home') }}">Home</a>
+                            <a class="nav-link text-white @yield('menuHome')" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
+                        {{-- Menu Order --}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page" href="{{ route('order') }}">Order</a>
+                        </li>
+                        {{-- Menu Profile --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuProfile')" aria-current="page" href="/profile">Profile</a>
                         </li>
+                        {{-- Menu Contact --}}
                         <li class="nav-item">
                             <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
                         </li>
+                        {{-- Tombol Login --}}
                         <li class="nav-item">
                             <a class="btn transparent-background text-white" aria-current="page"
                                 href="/login"><strong>Login</strong></a>
@@ -133,7 +148,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <img style="width: 100" src="{{ 'img/motor_header.png' }}" alt="">
+                <img style="width: 100%" src="{{ 'img/motor_header.png' }}" alt="">
             </div>
         </div>
 

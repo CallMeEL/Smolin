@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Motor;
 use App\Models\RentLog;
+use App\Models\Invoice;
 
 class MotorController extends Controller
 {
@@ -82,8 +83,14 @@ class MotorController extends Controller
         $validateData['user_id'] = auth()->user()->id;
 
         RentLog::create($validateData);
-        $request->session()->flash('success', 'Silahkan melakukan pembayaran');
-        // Kembali ke home
+
+        //Menghitung total harga per hari
+        $validateData['total_price'] = $motor->harga_motor * (strtotime($validateData['return_date']) - strtotime($validateData['rent_date'])) / (60 * 60 * 24);
+        //random generate unique ID invoice INV-12digits
+        $validateData['invoice_id'] = 'INV-' . mt_rand(100000000000, 999999999999);
+        Invoice::create($validateData);
+
+        $request->session()->flash('success', 'Silahkan melakukan pembayaran pada menu Order');
         return redirect('/');
 
     }
