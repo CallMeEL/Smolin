@@ -30,7 +30,7 @@
                 <div class="col-8 my-5 transparent-form-profile border-grey border-rounded">
                     <div class="form-floating mb-3 mt-3">
 
-                        <form method="post" action="">
+                        <form method="" action="">
                             @csrf
                             <div class="row">
 
@@ -39,7 +39,7 @@
                                     <h4>Nama Kendaraan</h4>
 
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Nama Kendaraan"
+                                        <input type="text" class="form-control" id="nama_motor" placeholder="Nama Kendaraan"
                                             aria-label="Nama Kendaraan" aria-describedby="basic-addon1">
                                     </div>
 
@@ -50,7 +50,7 @@
                                     <h4>Transmisi</h4>
 
                                     <div class="input-group mb-3">
-                                        <select class="form-select" id="inputGroupSelect01">
+                                        <select class="form-select" id="tipe_motor">
                                             <option selected>--Pilih--</option>
                                             <option value="Bebek">Bebek</option>
                                             <option value="Matic">Matic</option>
@@ -70,7 +70,7 @@
 
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                        <input type="text" class="form-control" placeholder="Harga Min"
+                                        <input type="text" class="form-control" id="harga_rendah" placeholder="Harga Min"
                                             aria-label="Harga Min" aria-describedby="basic-addon1">
                                     </div>
 
@@ -79,7 +79,7 @@
 
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                        <input type="text" class="form-control" placeholder="Harga Max"
+                                        <input type="text" class="form-control" id="harga_tinggi" placeholder="Harga Max"
                                             aria-label="Harga Max" aria-describedby="basic-addon1">
                                     </div>
 
