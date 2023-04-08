@@ -15,7 +15,7 @@
 @endif
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
+    <div class="row text-black justify-content-center align-items-center">
         <div class="col-md-8 transparent-form-profile border-grey border-rounded">
 {{--Head--}}
                 <br>
