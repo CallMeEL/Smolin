@@ -4,8 +4,8 @@
 
 @section('content')
 
-<div class="container-fluid banner">
-    <div class="container-fluid top">
+<div class="container-fluid banner-auth">
+    <div class="container-fluid p-5">
 
 @if (session('success'))
     <div class="alert alert-transparent-success alert-dismissible fade show" role="alert">
