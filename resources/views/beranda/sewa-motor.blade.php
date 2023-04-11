@@ -102,8 +102,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="rent_date"
-                                        placeholder="Tanggal Sewa" name="rent_date" value="{{ date('Y-m-d') }}">
+                                    <input type="date" class="form-control" id="rent_date" placeholder="Tanggal Sewa"
+                                        name="rent_date" value="{{ date('Y-m-d') }}">
                                     <label for="rent_date">Tanggal Sewa</label>
                                 </div>
                                 {{-- Error Message --}}
@@ -122,7 +122,11 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-danger">Sewa</button>
+                            <div class="card-footer">
+                                <a href="{{ route('home') }}" class="btn btn-danger col-5 mx-5">Kembali</a>
+                                <button type="submit"
+                                    class="btn btn-success col-5 mx-5 f"><strong>Sewa</strong></button>
+                            </div>
                     </form>
                 </div>
 
