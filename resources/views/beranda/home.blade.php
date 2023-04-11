@@ -23,7 +23,7 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row bg-dark d-flex content-justify-center text-white">
+            <div class="row bannercolor d-flex content-justify-center text-white">
 
                 <div class="col-2"></div>
 
@@ -124,6 +124,4 @@
             </div>
         </div>
     @else
-
-
     @endauth
