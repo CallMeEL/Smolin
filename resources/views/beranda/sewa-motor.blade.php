@@ -129,10 +129,12 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="card-footer">
-                                <a href="{{ route('home') }}" class="btn btn-danger col-5 mx-5">Kembali</a>
-                                <button type="submit"
-                                    class="btn btn-success col-5 mx-5 f"><strong>Sewa</strong></button>
+                            <div class="card-footer d-flex content-justify-center">
+                                <div class="col-1"></div>
+                                <a href="{{ route('home') }}" class="btn btn-danger col-4"><strong>Kembali</strong></a>
+                                <div class="col-2"></div>
+                                <button type="submit" class="btn btn-success col-4"><strong>Sewa</strong></button>
+                                <div class="col-1"></div>
                             </div>
                     </form>
                 </div>
