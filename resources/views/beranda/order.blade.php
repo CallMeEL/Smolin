@@ -22,7 +22,7 @@
     <h2 class="text-center"><strong>Your Invoices goes here~</strong></h2>
 </div>
 
-<div class="container-fluid p-5 bg-dark">
+<div class="container-fluid p-5 bannercolor">
 
         @foreach ($invoices as $invoice)
 
