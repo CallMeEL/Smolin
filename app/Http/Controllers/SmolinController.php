@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Motor;
 
 class SmolinController extends Controller
@@ -15,9 +16,16 @@ class SmolinController extends Controller
         return view('beranda.home', compact('motors'));
     }
 
-    public function filter()
+    public function filter(Request $request)
     {
-        //show motor data based on the filter that user want
+        $query = Motor::query();
 
+        if (request('search')){
+            $query->where('nama_motor', 'like', '%' . request('search') . '%');
+        }
+
+        //Kembali ke home dengan filter
+        $motors = $query->get();
+        return view('beranda.home', compact('motors'));
     }
 }
