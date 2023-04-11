@@ -30,30 +30,46 @@
                 <div class="col-8 my-5 transparent-form-profile border-grey border-rounded">
                     <div class="form-floating mb-3 mt-3">
 
-                        <form method="get" action="{{ route('search') }}">
+                        <form method="get" action="{{ route('home') }}">
                             <div class="row">
 
                                 {{-- Nama Kendaraan --}}
-                                <div class="col-6">
+                                <div class="col-4">
                                     <h4>Nama Kendaraan</h4>
 
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" id="nama_motor" placeholder="Nama Kendaraan"
-                                            aria-label="Nama Kendaraan" aria-describedby="basic-addon1" name="nama_motor">
+                                        aria-label="Nama Kendaraan" name="motor"
+                                        value="{{ request('motor') }}">
                                     </div>
 
                                 </div>
 
-                                {{-- Transmisi --}}
-                                <div class="col-6">
+                                {{-- Harga --}}
+                                <div class="col-4">
+                                    <h4>Harga</h4>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                        <input type="text" class="form-control" id="harga_tinggi" placeholder="Harga Max"
+                                            aria-label="Harga Max" name="max"
+                                            value="{{ request('max') }}">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-4">
                                     <h4>Transmisi</h4>
 
                                     <div class="input-group mb-3">
-                                        <select class="form-select" id="tipe_motor" name="tipe_motor">
-                                            <option selected>--Pilih--</option>
-                                            <option value="Bebek">Bebek</option>
-                                            <option value="Matic">Matic</option>
-                                            <option value="Kopling">Kopling</option>
+                                        <select class="form-select" id="transmisi" name="transmisi">
+                                            <option value="">--Pilih--</option>
+                                            <option value="Bebek" {{ request('trasnmisi') == 'Bebek' ? 'selected' : '' }}>
+                                                Bebek</option>
+                                            <option value="Matic" {{ request('transmisi') == 'Matic' ? 'selected' : '' }}>
+                                                Matic</option>
+                                            <option value="Kopling" {{ request('transmisi') == 'Kopling' ? 'selected' : '' }}>
+                                                Kopling</option>
                                         </select>
                                     </div>
 
@@ -61,32 +77,7 @@
 
                             </div>
 
-                            <div class="row">
-
-                                {{-- Harga Kisaran --}}
-                                <h4>Harga Kisaran</h4>
-                                <div class="col-6">
-
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                        <input type="text" class="form-control" id="harga_rendah" placeholder="Harga Min"
-                                            aria-label="Harga Min" aria-describedby="basic-addon1" name="harga_rendah">
-                                    </div>
-
-                                </div>
-                                <div class="col-6">
-
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                        <input type="text" class="form-control" id="harga_tinggi" placeholder="Harga Max"
-                                            aria-label="Harga Max" aria-describedby="basic-addon1" name="harga_tinggi">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <input type="submit" class="btn colorpink button-press-pink text-white btn-block" value="Search">
+                            <button type="submit" class="btn colorpink button-press-pink text-white btn-block">Search</button>
 
                         </form>
                     </div>

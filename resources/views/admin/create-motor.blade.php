@@ -43,11 +43,11 @@
                 {{-- Tipe Motor --}}
                 <div class="col-6">
                     <div class="form-floating mb-3 mt-3">
-                        <select class="form-control @error('tipe_motor') is-invalid @enderror" name="tipe_motor" id="tipe_motor" value="{{ old('tipe_motor') }}">
+                        <select class="form-control @error('tipe_motor') is-invalid @enderror" name="tipe_motor" id="tipe_motor">
                             <option value="">--Pilih--</option>
-                            <option value="Bebek">Bebek</option>
-                            <option value="Matic">Matic</option>
-                            <option value="Kopling">Kopling</option>
+                            <option value="Bebek" {{ old('tipe_motor') == 'Bebek' ? 'selected' : '' }}>Bebek</option>
+                            <option value="Matic" {{ old('tipe_motor') == 'Matic' ? 'selected' : '' }}>Matic</option>
+                            <option value="Kopling" {{ old('tipe_motor') == 'Kopling' ? 'selected' : '' }}>Kopling</option>
                         </select>
                         <label for="tipe_motor">Tipe Motor</label>
                         {{-- Error Message --}}

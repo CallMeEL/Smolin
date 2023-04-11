@@ -10,22 +10,23 @@ class SmolinController extends Controller
 {
     public function index()
     {
-        //show motor data that available
-        $motors = Motor::where('status', 'available')->get();
+        $motors = Motor::where('status', 'available');
 
-        return view('beranda.home', compact('motors'));
-    }
-
-    public function filter(Request $request)
-    {
-        $query = Motor::query();
-
-        if (request('search')){
-            $query->where('nama_motor', 'like', '%' . request('search') . '%');
+        if (request('motor')){
+            $motors->where('nama_motor', 'like', '%' . request('motor') . '%');
         }
 
-        //Kembali ke home dengan filter
-        $motors = $query->get();
-        return view('beranda.home', compact('motors'));
+        if (request('max')){
+            $motors->where('harga_motor', '<=', request('max'));
+        }
+
+        if (request('transmisi')){
+            $motors->where('tipe_motor', request('transmisi'));
+        }
+
+        return view('beranda.home', [
+            "motors" => $motors->get()
+        ]);
     }
+
 }

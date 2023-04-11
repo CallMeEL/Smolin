@@ -30,9 +30,6 @@ use App\Http\Controllers\InvoiceController;
 Route::get('/', [SmolinController::class, 'index'])
     ->name('home');
 
-Route::get('/search', [SmolinController::class, 'filter'])
-    ->name('search');
-
 
 //[+]============================================================[+]
 //                     Admin Menu Controller
