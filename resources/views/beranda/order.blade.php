@@ -50,7 +50,7 @@
                     {{-- Tombol Pembayaran, Pembatalan, Tanda Lunas--}}
                     <div class="col-md-2 d-flex align-items-center">
                         <div class="container-fluid d-grid gap-3">
-                            <a href="" type="button" class="btn btn-primary btn-block"><strong>Pay</strong></a>
+                            <a href="{{ route('order.show', $invoice->id) }}" class="btn btn-primary btn-block"><strong>Pay</strong></a>
                             <button type="button" class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#{{ $invoice->invoice_id }}"><strong>Cancel</strong></button>
                         </div>
                     </div>

@@ -58,7 +58,26 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        //Join tabel invoice, dan motor
+        $result = Invoice::join('motors', 'motors.id', '=', 'invoices.motor_id')
+            ->where('invoices.id', $invoice->id)
+            ->get([
+                'invoices.id',
+                'invoices.invoice_id',
+                'invoices.user_id',
+                'invoices.motor_id',
+                'invoices.rent_date',
+                'invoices.return_date',
+                'invoices.total_price',
+                'invoices.payment_status',
+                'invoices.payment_proof',
+                'motors.nama_motor',
+                'motors.tipe_motor',
+                'motors.gambar_motor',
+            ])
+            ->first();
+
+        return view('beranda.payment', compact('result'));
     }
 
     /**

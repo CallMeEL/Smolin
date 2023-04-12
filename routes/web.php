@@ -71,6 +71,10 @@ Route::delete('/order/{invoice}', [InvoiceController::class, 'destroy'])
     ->middleware('auth')
     ->name('order.destroy');
 
+Route::get('/order/{invoice}', [InvoiceController::class, 'show'])
+    ->middleware('auth')
+    ->name('order.show');
+
 //[+]============================================================[+]
 //                     Update User Controller
 //[+]============================================================[+]
