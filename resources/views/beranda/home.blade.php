@@ -90,7 +90,7 @@
                     @forelse ($motors as $motor)
                         <div class="col-2 mx-2">
                             <div class="card transparent-form-profile border-grey border-rounded">
-                                <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="card-img-top">
+                                <img src="{{ asset('storage/' . $motor->gambar_motor) }}" class="card-img-top img-1-1">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ $motor->nama_motor }}</h3>
                                     <p class="card-text">Transmisi: <br> <strong>{{ $motor->tipe_motor }}</strong><br>Harga
