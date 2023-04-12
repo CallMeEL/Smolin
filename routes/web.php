@@ -59,6 +59,7 @@ Route::post('/motor/{motor}', [MotorController::class, 'rent'])
     ->middleware('auth')
     ->name('motor.rent');
 
+
 //[+]============================================================[+]
 //                      Invoice Controller
 //[+]============================================================[+]

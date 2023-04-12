@@ -16,7 +16,9 @@ class AdminMenuController extends Controller
 
         $totalSewa = Motor::where('status', 'unavailable')->count();
 
+
         return view('admin.dashboard', compact('totalMotor', 'totalUser', 'totalSewa'));
     }
+
 
 }
