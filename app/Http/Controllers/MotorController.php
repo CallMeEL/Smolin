@@ -86,8 +86,8 @@ class MotorController extends Controller
 
         //Menghitung total harga per hari
         $validateData['total_price'] = $motor->harga_motor * (strtotime($validateData['return_date']) - strtotime($validateData['rent_date'])) / (60 * 60 * 24);
-        //random generate unique ID invoice INV-12digits
-        $validateData['invoice_id'] = 'INV-' . mt_rand(100000000000, 999999999999);
+        //ID dibuat berdasarkan tanggal hari ini dan random 8 digit angka, misalnya INV-1204202388888888
+        $validateData['invoice_id'] = 'INV-' . date('dmY') . rand(10000000, 99999999);
         Invoice::create($validateData);
 
         $request->session()->flash('success', 'Silahkan melakukan pembayaran pada menu Order');
