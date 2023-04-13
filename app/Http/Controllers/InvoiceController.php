@@ -16,6 +16,15 @@ class InvoiceController extends Controller
      */
     public function index()
     {
+        // Jika ada tanggal yang kurang dari tanggal sekarang, update invoices payment_status menjadi 'late'
+        $invoices = Invoice::where('user_id', auth()->user()->id)->get();
+        foreach ($invoices as $invoice) {
+            if ($invoice->rent_date < date('Y-m-d')) {
+                $invoice->payment_status = 'late';
+                $invoice->save();
+            }
+        }
+
         //Join tabel invoice, dan motor
         $invoices = Invoice::join('motors', 'motors.id', '=', 'invoices.motor_id')
             ->where('user_id', auth()->user()->id)
