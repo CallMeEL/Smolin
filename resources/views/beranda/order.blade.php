@@ -49,10 +49,28 @@
 
                     {{-- Tombol Pembayaran, Pembatalan, Tanda Lunas--}}
                     <div class="col-md-2 d-flex align-items-center">
+                        {{-- Jika payment_status 'waiting', maka muncul lambang menunggu --}}
+                        @if ($invoice->payment_status == 'waiting')
+                            <div class="container-fluid d-grid gap-3 align-items-center">
+                                <button type="button" class="btn btn-warning btn-block" disabled><strong>Waiting</strong>
+                                    <i class="bi bi-clock-fill"></i></button>
+                            </div>
+                        @elseif ($invoice->payment_status == 'paid')
+                            <div class="container-fluid d-grid gap-3">
+                                <button type="button" class="btn btn-success btn-block" disabled><strong>Paid</strong>
+                                    <i class="bi bi-check-circle-fill"></i></button>
+                            </div>
+                        @elseif ($invoice->payment_status == 'unpaid')
                         <div class="container-fluid d-grid gap-3">
                             <a href="{{ route('order.show', $invoice->id) }}" class="btn btn-primary btn-block"><strong>Pay</strong></a>
                             <button type="button" class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#{{ $invoice->invoice_id }}"><strong>Cancel</strong></button>
                         </div>
+                        @elseif ($invoice->payment_status == 'late')
+                        <div class="container-fluid d-grid gap-3">
+                            <button type="button" class="btn btn-danger btn-block" disabled><strong>Late</strong>
+                                <i class="bi bi-exclamation-circle-fill"></i></button>
+                        </div>
+                        @endif
                     </div>
 
                 </div>

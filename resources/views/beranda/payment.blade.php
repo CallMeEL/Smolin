@@ -71,6 +71,13 @@
     <div class="container">
 
         <div class="row justify-content-center">
+            {{-- Error session --}}
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="col-6">
 
                 <div class="card transparent-form-profile border-grey border-rounded">
@@ -80,7 +87,69 @@
 
                     <div class="card-body">
 
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="card-text text-start">Nama Penyewa:</p>
+                                <p class="card-text text-start">Nama Motor:</p>
+                                <p class="card-text text-start">Harga per hari:</p>
+                                <p class="card-text text-start">Transmisi:</p>
+                                <p class="card-text text-start">Tanggal Sewa:</p>
+                                <p class="card-text text-start">Tanggal Kembali:</p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <strong>
+                                    <p class="card-text text-capitalize text-end">{{ $result->name }}</p>
+                                    <p class="card-text text-capitalize text-end">{{ $result->nama_motor }}</p>
+                                    <p class="card-text text-capitalize text-end">Rp. {{ number_format($result->harga_motor, 2) }}</p>
+                                    <p class="card-text text-capitalize text-end">{{ $result->tipe_motor }}</p>
+                                    <p class="card-text text-capitalize text-end">{{ date('d-m-Y', strtotime($result->rent_date)) }}</p>
+                                    <p class="card-text text-capitalize text-end">{{ date('d-m-Y', strtotime($result->return_date)) }}</p>
+                                </strong>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5 class="card-text text-start">Harga Sewa:</h5>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h5 class="card-text text-end">Rp. <strong> {{ number_format($result->total_price, 2) }} </strong></h5>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <div class="card-footer mb-2">
+                        <div class="card-text">
+                            <p><strong>Silahkan Masukkan Bukti Pembayaran</strong></p>
+                        </div>
+                        <form action="{{ route('order.bukti', $result->id) }}" enctype="multipart/form-data" method="post">
+                            @method('PUT')
+                            @csrf
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    {{-- Bukti Gambar Pembayaran --}}
+                                    <input type="file" class="form-control" id="payment_proof" placeholder="Bukti Pembayaran" name="payment_proof" accept="image/gif, image/jpeg, image/png" required>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-block">Pay</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- Error Message --}}
+                            @error('payment_proof')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </form>
+                    </div>
+
                 </div>
 
             </div>
