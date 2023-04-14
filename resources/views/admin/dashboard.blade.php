@@ -88,6 +88,17 @@
 
         </div>
 
+        <table border="1" cellpadding="10">
+            <tr>
+                <td bgcolor="yellow">Baris 1 kolom 1</td>
+                <td>baris 1 kolom 2</td>
+            </tr>
+            <tr bgcolor="#00ff80">
+                <td>Baris 2 kolom 1</td>
+                <td>baris 2 kolom 2</td>
+            </tr>
+        </table>
+
     </div>
 
 
