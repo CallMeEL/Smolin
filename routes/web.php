@@ -76,6 +76,10 @@ Route::get('/order/{invoice}', [InvoiceController::class, 'show'])
     ->middleware('auth')
     ->name('order.show');
 
+Route::put('/order/{invoice}', [InvoiceController::class, 'upload'])
+    ->middleware('auth')
+    ->name('order.bukti');
+
 //[+]============================================================[+]
 //                     Update User Controller
 //[+]============================================================[+]
