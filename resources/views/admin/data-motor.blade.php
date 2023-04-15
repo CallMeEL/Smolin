@@ -11,10 +11,17 @@
 @section('content')
 
 <div class="container">
+    {{-- Alert --}}
+    @if (session('success'))
+    <div class="alert bg-success text-white alert-dismissible my-2 fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
 
     {{-- Data Motor --}}
 
-    <div class="row mt-5">
+    <div class="row">
         <div class="col-md-12">
             <h3 class="text-capitalize">Data Motor</h3>
         </div>
@@ -29,23 +36,74 @@
                         <th scope="col">Nama Motor</th>
                         <th scope="col">Transmisi</th>
                         <th scope="col">Harga (Harian)</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="text-center">Edit</th>
+                        <th scope="col" class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($motorDatas as $m)
+                    @forelse ($motorDatas as $m)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $m->nama_motor }}</td>
                             <td>{{ $m->tipe_motor }}</td>
+                            <td>{{ $m->status }}</td>
                             <td>Rp. {{ number_format($m->harga_motor, 2) }}</td>
+                            <td class="text-center">
+                                <a href="{{ route('motor.edit', $m->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+                            </td>
+                            <td class="text-center">
+                                {{-- <form action="{{ route('motor.destroy', $m->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                </form> --}}
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#{{ $m->id }}"><i class="bi bi-trash"></i></button>
+                            </td>
                         </tr>
-                    @endforeach
+                    @empty
+
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
 
 </div>
+@forelse ($motorDatas as $m)
+
+{{-- Modal for Delete --}}
+<div class="modal" id="{{ $m->id }}">
+    <div class="modal-dialog">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">{{ $m->nama_motor }}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Apakah anda yakin untuk menghapus?
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        <form action="{{ route('motor.destroy', $m->id) }}" method="post">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+        </form>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+@empty
+
+@endforelse
 
 @endsection
 <script>

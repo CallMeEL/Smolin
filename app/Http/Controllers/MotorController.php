@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Motor;
 use App\Models\RentLog;
 use App\Models\Invoice;
+use Illuminate\Support\Facades\Storage;
 
 class MotorController extends Controller
 {
@@ -99,6 +100,43 @@ class MotorController extends Controller
     {
         $motorDatas = Motor::all();
         return view('admin.data-motor', compact('motorDatas'));
+    }
+
+    public function edit(Motor $motor)
+    {
+        $result = Motor::find($motor->id);
+        return view('admin.edit-motor', compact('result'));
+    }
+
+    public function update(Request $request, Motor $motor)
+    {
+        $validateData = $request->validate([
+            'nama_motor' => 'required',
+            'tipe_motor' => 'required',
+            'gambar_motor' => 'image|file|max:4096',
+            'harga_motor' => 'required|numeric',
+        ]);
+
+        if($request->file('gambar_motor')){
+            if($request->oldMotorImage){
+                Storage::delete($request->oldMotorImage);
+            }
+            $validateData['gambar_motor'] = $request->file('gambar_motor')->store('motor-images');
+        }
+
+        Motor::where('id', $motor->id)->update($validateData);
+        $request->session()->flash('success', 'Data Berhasil Diubah!');
+        return redirect()->route('motor.table');
+    }
+
+    public function destroy(Request $request, Motor $motor)
+    {
+        Motor::destroy($motor->id);
+        // Hapus gambar motor yang ada di storage/app/public/motor-images
+        Storage::delete($motor->gambar_motor);
+
+        $request->session()->flash('success', 'Data Berhasil Dihapus!');
+        return redirect()->route('motor.table');
     }
 
 }

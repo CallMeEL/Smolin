@@ -55,6 +55,14 @@ Route::get('/motor/table', [MotorController::class, 'table'])
     ->middleware('auth', 'admin')
     ->name('motor.table');
 
+Route::get('/motor/{motor}/edit', [MotorController::class, 'edit'])
+    ->middleware('auth', 'admin')
+    ->name('motor.edit');
+
+Route::put('/motor/{motor}', [MotorController::class, 'update'])
+    ->middleware('auth', 'admin')
+    ->name('motor.update');
+
 Route::get('/motor/{motor}', [MotorController::class, 'show'])
     ->middleware('auth')
     ->name('motor.show');
@@ -63,9 +71,9 @@ Route::post('/motor/{motor}', [MotorController::class, 'rent'])
     ->middleware('auth')
     ->name('motor.rent');
 
-// Route::delete('/motor/{motor}', [MotorController::class, 'destroy'])
-//     ->middleware('auth', 'admin')
-//     ->name('motor.destroy');
+Route::delete('/motor/{motor}', [MotorController::class, 'destroy'])
+    ->middleware('auth', 'admin')
+    ->name('motor.destroy');
 
 //[+]============================================================[+]
 //                      Invoice Controller
