@@ -47,8 +47,14 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $m->nama_motor }}</td>
                             <td>{{ $m->tipe_motor }}</td>
-                            <td>{{ $m->status }}</td>
                             <td>Rp. {{ number_format($m->harga_motor, 2) }}</td>
+                            <td>
+                                @if ($m->status == 'available')
+                                    Available <i class="bi bi-check-circle-fill text-success"></i>
+                                @else
+                                    Unavailable <i class="bi bi-x-circle-fill text-danger"></i>
+                                @endif
+                            </td>
                             <td class="text-center">
                                 <a href="{{ route('motor.edit', $m->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
                             </td>
