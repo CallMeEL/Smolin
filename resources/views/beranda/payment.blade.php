@@ -133,7 +133,7 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     {{-- Bukti Gambar Pembayaran --}}
-                                    <input type="file" class="form-control" id="payment_proof" placeholder="Bukti Pembayaran" name="payment_proof" accept="image/gif, image/jpeg, image/png" required>
+                                    <input type="file" class="form-control @error('pament_proof') is-invalid @enderror" id="payment_proof" placeholder="Bukti Pembayaran" name="payment_proof" accept="image/gif, image/jpeg, image/png" required>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="d-grid">

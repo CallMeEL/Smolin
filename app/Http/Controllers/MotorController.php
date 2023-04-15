@@ -95,4 +95,10 @@ class MotorController extends Controller
 
     }
 
+    public function table()
+    {
+        $motorDatas = Motor::all();
+        return view('admin.data-motor', compact('motorDatas'));
+    }
+
 }
