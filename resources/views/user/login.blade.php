@@ -40,7 +40,7 @@
                     @csrf
 {{--Email--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" autofocus required value="{{ old('email') }}">
+                        <input type="email" class="form-control text-white transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" autofocus required value="{{ old('email') }}">
                         <label for="email">Email</label>
                         {{-- Error Message --}}
                                 @error('email')
@@ -49,7 +49,7 @@
                     </div>
 {{--Password--}}
                     <div class="form-floating mt-3 mb-3">
-                        <input type="password" class="form-control transparent-input" id="password" placeholder="Enter password" name="password" required>
+                        <input type="password" class="form-control text-white transparent-input" id="password" placeholder="Enter password" name="password" required>
                         <label for="password">Password</label>
                         {{-- Error Message --}}
                                 @error('password')

@@ -15,7 +15,7 @@
 @endif
 
 <div class="container">
-    <div class="row text-black justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-8 transparent-form-profile border-grey border-rounded">
 {{--Head--}}
                 <br>
@@ -26,7 +26,7 @@
                     @csrf
 {{--Full Name--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control transparent-input @error('name') is-invalid @enderror" id="name" placeholder="Enter fullName" name="name" required value="{{ old('name', Auth::user()->name) }}">
+                        <input type="text" class="form-control text-white transparent-input @error('name') is-invalid @enderror" id="name" placeholder="Enter fullName" name="name" required value="{{ old('name', Auth::user()->name) }}">
                         <label for="fullName">Name</label>
                         {{-- Error Message --}}
                                 @error('name')
@@ -35,7 +35,7 @@
                     </div>
 {{--Phone Number--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control transparent-input @error('phone_number') is-invalid @enderror" id="phone_number" placeholder="Enter phoneNumber" name="phone_number" required value="{{ old('phone_number', Auth::user()->phone_number) }}">
+                        <input type="text" class="form-control text-white transparent-input @error('phone_number') is-invalid @enderror" id="phone_number" placeholder="Enter phoneNumber" name="phone_number" required value="{{ old('phone_number', Auth::user()->phone_number) }}">
                         <label for="phone_number">Phone Number</label>
                         {{-- Error Message --}}
                                 @error('phone_number')
@@ -44,7 +44,7 @@
                     </div>
 {{--Email--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" required value="{{ old('email', Auth::user()->email) }}" disabled>
+                        <input type="email" class="form-control text-white transparent-input @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" required value="{{ old('email', Auth::user()->email) }}" disabled>
                         <label for="email"><p class="text-white">Email</p></label>
                         {{-- Error Message --}}
                                 @error('email')
@@ -53,7 +53,7 @@
                     </div>
 {{--No KTP--}}
                     <div class="form-floating mb-3 mt-3">
-                        <input type="no_ktp" class="form-control transparent-input @error('no_ktp') is-invalid @enderror" id="no_ktp" placeholder="No. KTP" name="no_ktp" required value="{{ old('no_ktp', Auth::user()->no_ktp) }}">
+                        <input type="no_ktp" class="form-control text-white transparent-input @error('no_ktp') is-invalid @enderror" id="no_ktp" placeholder="No. KTP" name="no_ktp" required value="{{ old('no_ktp', Auth::user()->no_ktp) }}">
                         <label for="no_ktp"><p class="text-white">No. KTP</p></label>
                         {{-- Error Message --}}
                                 @error('no_ktp')

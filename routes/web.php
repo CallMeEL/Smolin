@@ -39,6 +39,18 @@ Route::get('/admin', [AdminMenuController::class, 'index'])
     ->middleware('auth', 'admin')
     ->name('admin');
 
+Route::get('/admin/order', [AdminMenuController::class, 'verifiedClientOrder'])
+    ->middleware('auth', 'admin')
+    ->name('admin.order');
+
+Route::get('/admin/detail-order/{invoice}', [AdminMenuController::class, 'detailOrderClient'])
+    ->middleware('auth', 'admin')
+    ->name('admin.detail-order');
+
+Route::put('/admin/{invoices}/confirm', [AdminMenuController::class, 'confirmOrderAdmin'])
+    ->middleware('auth', 'admin')
+    ->name('admin.confirm');
+
 //[+]============================================================[+]
 //                       Motor Controller
 //[+]============================================================[+]
@@ -51,6 +63,18 @@ Route::post('/motor', [MotorController::class, 'store'])
     ->middleware('auth', 'admin')
     ->name('motor.store');
 
+Route::get('/motor/table', [MotorController::class, 'table'])
+    ->middleware('auth', 'admin')
+    ->name('motor.table');
+
+Route::get('/motor/{motor}/edit', [MotorController::class, 'edit'])
+    ->middleware('auth', 'admin')
+    ->name('motor.edit');
+
+Route::put('/motor/{motor}', [MotorController::class, 'update'])
+    ->middleware('auth', 'admin')
+    ->name('motor.update');
+
 Route::get('/motor/{motor}', [MotorController::class, 'show'])
     ->middleware('auth')
     ->name('motor.show');
@@ -59,6 +83,9 @@ Route::post('/motor/{motor}', [MotorController::class, 'rent'])
     ->middleware('auth')
     ->name('motor.rent');
 
+Route::delete('/motor/{motor}', [MotorController::class, 'destroy'])
+    ->middleware('auth', 'admin')
+    ->name('motor.destroy');
 
 //[+]============================================================[+]
 //                      Invoice Controller

@@ -2,17 +2,24 @@
 @section('title', 'Admin Dashboard')
 @section('menuDashboard', 'active')
 
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+</head>
+
 @section('content')
 
     <div class="container">
         {{-- Header --}}
         <div class="row">
-            <div class="col-md-12 m-2">
+            <div class="col-md-12 mt-4">
 
                 <h3 class="text-capitalize">Selamat Datang, {{ auth()->user()->name }}</h3>
 
             </div>
         </div>
+        <hr>
         {{-- Card Info --}}
         <div class="row justify-content-center">
 

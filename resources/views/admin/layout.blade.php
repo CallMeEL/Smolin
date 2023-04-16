@@ -12,7 +12,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{ 'assets/admin-menu.css' }}">
+    <link rel="stylesheet" href="{{ url('assets/admin-menu.css') }}">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,13 +20,6 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="#"><strong>Smolin</strong></a>
-        <!-- Navbar Search-->
-        {{-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form> --}}
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto me-3 me-lg-4">
             {{-- Logout --}}
@@ -41,6 +34,7 @@
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -50,15 +44,27 @@
                         <h3 class="text-center text-white">Menu Admin</h3>
 
                         <div class="sb-sidenav-menu-heading">Menu</div>
+
                         <a class="nav-link @yield('menuDashboard')" href="{{ route('admin') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
 
+                        <a class="nav-link @yield('menuOrderAdmin')" href="{{ route('admin.order') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-cash-stack"></i></div>
+                            Client Order
+                        </a>
+
                         <div class="sb-sidenav-menu-heading">Vehicle</div>
+
                         <a class="nav-link @yield('menuCreateMotor')" href="{{ route('motor') }}">
                             <div class="sb-nav-link-icon"><i class="bi bi-plus-circle-fill"></i></div>
                             Tambah Motor
+                        </a>
+
+                        <a class="nav-link @yield('menuTableMotor')" href="{{ route('motor.table') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-table"></i></div>
+                            Data Motor
                         </a>
 
                     </div>
@@ -72,6 +78,7 @@
 
             </nav>
         </div>
+
         <div id="layoutSidenav_content">
             <main>
 
