@@ -39,9 +39,17 @@ Route::get('/admin', [AdminMenuController::class, 'index'])
     ->middleware('auth', 'admin')
     ->name('admin');
 
-Route::get('/admin/verified', [AdminMenuController::class, 'verifiedClientOrder'])
+Route::get('/admin/order', [AdminMenuController::class, 'verifiedClientOrder'])
     ->middleware('auth', 'admin')
     ->name('admin.order');
+
+Route::get('/admin/detail-order/{invoice}', [AdminMenuController::class, 'detailOrderClient'])
+    ->middleware('auth', 'admin')
+    ->name('admin.detail-order');
+
+Route::put('/admin/{invoices}/confirm', [AdminMenuController::class, 'confirmOrderAdmin'])
+    ->middleware('auth', 'admin')
+    ->name('admin.confirm');
 
 //[+]============================================================[+]
 //                       Motor Controller
