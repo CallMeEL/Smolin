@@ -13,12 +13,13 @@
     <div class="container">
     {{-- Header --}}
         <div class="row">
-            <div class="col-md-12 m-2">
+            <div class="col-md-12 mt-4">
 
                 <h3 class="text-capitalize">Selamat Datang, {{ auth()->user()->name }}</h3>
 
             </div>
         </div>
+        <hr>
     {{-- Card Info --}}
         <div class="row justify-content-center">
 

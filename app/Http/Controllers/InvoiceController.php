@@ -137,12 +137,13 @@ class InvoiceController extends Controller
         Invoice::destroy($invoice->id)
             ? session()->flash('success', 'Invoice berhasil dihapus!')
             : session()->flash('error', 'Invoice gagal dihapus!');
-        //Menghapus rent logs berdasarkan return_date rent_date motor_id dan user_id yang sama dengan Invoice
-        RentLog::where('return_date', $invoice->return_date)
-            ->where('rent_date', $invoice->rent_date)
-            ->where('motor_id', $invoice->motor_id)
-            ->where('user_id', $invoice->user_id)
-            ->delete();
+        //Menghapus rent logs berdasarkan id Invoice
+        RentLog::where('invoice_id', $invoice->id)->delete();
+        // RentLog::where('return_date', $invoice->return_date)
+        //     ->where('rent_date', $invoice->rent_date)
+        //     ->where('motor_id', $invoice->motor_id)
+        //     ->where('user_id', $invoice->user_id)
+        //     ->delete();
         // Return to /order/{invoice} and next to /order
         return back();
     }

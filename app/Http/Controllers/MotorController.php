@@ -83,13 +83,28 @@ class MotorController extends Controller
         $validateData['motor_id'] = $motor->id;
         $validateData['user_id'] = auth()->user()->id;
 
-        RentLog::create($validateData);
 
         //Menghitung total harga per hari
         $validateData['total_price'] = $motor->harga_motor * (strtotime($validateData['return_date']) - strtotime($validateData['rent_date'])) / (60 * 60 * 24);
-        //ID dibuat berdasarkan tanggal hari ini dan random 8 digit angka, misalnya INV-1204202388888888
-        $validateData['invoice_id'] = 'INV-' . date('dmY') . rand(10000000, 99999999);
-        Invoice::create($validateData);
+        Invoice::create([
+            //ID dibuat berdasarkan tanggal hari ini dan random 8 digit angka, misalnya INV-1204202388888888
+            'invoice_id' => 'INV-' . date('dmY') . rand(10000000, 99999999),
+            'motor_id' => $motor->id,
+            'user_id' => auth()->user()->id,
+            'total_price' => $validateData['total_price'],
+            'rent_date' => $validateData['rent_date'],
+            'return_date' => $validateData['return_date'],
+        ]);
+
+        //invoice_id di renllog = id pada invoice
+        $validateData['invoice_id'] = Invoice::where('motor_id', $motor->id)
+            ->where('user_id', auth()->user()->id)
+            ->where('total_price', $validateData['total_price'])
+            ->where('rent_date', $validateData['rent_date'])
+            ->where('return_date', $validateData['return_date'])
+            ->first()->id;
+
+        RentLog::create($validateData);
 
         $request->session()->flash('success', 'Silahkan melakukan pembayaran pada menu Order');
         return redirect('/');

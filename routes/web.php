@@ -39,6 +39,10 @@ Route::get('/admin', [AdminMenuController::class, 'index'])
     ->middleware('auth', 'admin')
     ->name('admin');
 
+Route::get('/admin/verified', [AdminMenuController::class, 'verifiedClientOrder'])
+    ->middleware('auth', 'admin')
+    ->name('admin.order');
+
 //[+]============================================================[+]
 //                       Motor Controller
 //[+]============================================================[+]

@@ -22,10 +22,12 @@
     {{-- Data Motor --}}
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-4">
             <h3 class="text-capitalize">Data Motor</h3>
         </div>
     </div>
+
+    <hr>
 
     <div class="row mt-3">
         <div class="col-md-12">

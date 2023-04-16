@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('motor_id');
             $table->foreign('motor_id')->references('id')->on('motors');
+            $table->unsignedBigInteger('invoice_id');
+            $table->foreign('invoice_id')->references('id')->on('invoices');
             $table->date('rent_date');
             $table->date('return_date');
             $table->date('actual_return_date')->nullable();

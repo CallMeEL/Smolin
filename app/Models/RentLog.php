@@ -12,6 +12,7 @@ class RentLog extends Model
     protected $fillable = [
         'user_id',
         'motor_id',
+        'invoice_id',
         'rent_date',
         'return_date',
         'actual_return_date',

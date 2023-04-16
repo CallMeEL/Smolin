@@ -41,12 +41,19 @@
                         <h3 class="text-center text-white">Menu Admin</h3>
 
                         <div class="sb-sidenav-menu-heading">Menu</div>
+
                         <a class="nav-link @yield('menuDashboard')" href="{{ route('admin') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
 
+                        <a class="nav-link @yield('menuOrderAdmin')" href="{{ route('admin.order') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-cash-stack"></i></div>
+                            Client Order
+                        </a>
+
                         <div class="sb-sidenav-menu-heading">Vehicle</div>
+
                         <a class="nav-link @yield('menuCreateMotor')" href="{{ route('motor') }}">
                             <div class="sb-nav-link-icon"><i class="bi bi-plus-circle-fill"></i></div>
                             Tambah Motor
