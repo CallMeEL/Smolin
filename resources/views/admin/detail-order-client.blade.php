@@ -22,6 +22,9 @@
     </div>
 
     {{-- Detail Isi Invoice --}}
+    <div class="row content-justify-center">
+    <div class="col-2"></div>
+    <div class="col-8">
 
     <div class="card mb-5">
         <div class="card-header">
@@ -125,12 +128,26 @@
                     @method('PUT')
                     @csrf
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success float-right btn-block"><strong>Konfirmasi Pembayaran</strong></button>
+                        <button type="submit" class="btn btn-success float-right btn-block mb-2"><strong>Konfirmasi Pembayaran</strong></button>
+                    </div>
+                </form>
+                {{-- Tidak di Confirm, maka foto dihapus --}}
+                <form action="{{ route('admin.reject', $invoices->id) }}" method="post" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
+                    <input type="hidden" name="oldPaymentProof" value="{{ $invoices->payment_proof }}">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-danger float-right btn-block"><strong>Tolak Pembayaran</strong></button>
                     </div>
                 </form>
             </div>
         </div>
+
     </div>
+
+    </div>
+    </div>
+
 </div>
 
 @endsection

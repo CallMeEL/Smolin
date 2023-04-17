@@ -9,6 +9,7 @@
 </head>
 
 @section('content')
+<div class="container">
 
     {{-- Alert --}}
     @if (session('success'))
@@ -33,7 +34,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <table id="table_invoice" class="table table-striped table-hover">
+            <table id="table_invoice" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -79,6 +80,10 @@
             </table>
         </div>
     </div>
+
+    <hr>
+
+</div>
 
 @endsection
 <script>
