@@ -92,6 +92,50 @@
                 </div>
             </div>
 
+        </div>
+
+        <hr>
+
+        {{-- Rent Logs Table --}}
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h3 class="text-capitalize text-center">Riwayat Sewa</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="rent_logs" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama User</th>
+                            <th>Nama Motor</th>
+                            <th>Tanggal Sewa</th>
+                            <th>Tanggal Kembali</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($rentLogs as $rentLog)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $rentLog->name }}</td>
+                                <td>{{ $rentLog->nama_motor }}</td>
+                                <td>{{ date('d-m-Y', strtotime($rentLog->rent_date)) }}</td>
+                                <td>{{ date('d-m-Y', strtotime($rentLog->return_date)) }}</td>
+                                <td>
+                                    {{-- Jika actual return date !null, maka Sudah Dikembalikan --}}
+                                    @if ($rentLog->actual_return_date != null)
+                                        <span class="badge bg-success">Sudah Dikembalikan</span>
+                                    @else
+                                        <span class="badge bg-warning">Belum Diketahui</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
         </div>
 
@@ -99,3 +143,8 @@
 
 
 @endsection
+<script>
+    $(document).ready( function () {
+        $('#rent_logs').DataTable();
+    } );
+</script>

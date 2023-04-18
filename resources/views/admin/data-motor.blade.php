@@ -31,7 +31,7 @@
 
     <div class="row mt-3">
         <div class="col-md-12">
-            <table id="tabel_motor" class="table table-striped table-hover">
+            <table id="tabel_motor" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -76,6 +76,8 @@
             </table>
         </div>
     </div>
+
+    <hr>
 
 </div>
 @forelse ($motorDatas as $m)

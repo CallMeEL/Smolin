@@ -51,6 +51,10 @@ Route::put('/admin/{invoices}/confirm', [AdminMenuController::class, 'confirmOrd
     ->middleware('auth', 'admin')
     ->name('admin.confirm');
 
+Route::put('/admin/{invoices}/reject', [AdminMenuController::class, 'rejectOrderAdmin'])
+    ->middleware('auth', 'admin')
+    ->name('admin.reject');
+
 //[+]============================================================[+]
 //                       Motor Controller
 //[+]============================================================[+]
