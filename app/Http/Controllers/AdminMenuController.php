@@ -120,4 +120,9 @@ class AdminMenuController extends Controller
         return redirect()->route('admin.order');
     }
 
+    public function returnMotorAdmin()
+    {
+        return view('admin.return-motor');
+    }
+
 }

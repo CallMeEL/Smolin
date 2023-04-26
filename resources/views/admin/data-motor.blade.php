@@ -29,51 +29,57 @@
 
     <hr>
 
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <table id="tabel_motor" class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Motor</th>
-                        <th scope="col">Transmisi</th>
-                        <th scope="col">Harga (Harian)</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" class="text-center">Edit</th>
-                        <th scope="col" class="text-center">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($motorDatas as $m)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $m->nama_motor }}</td>
-                            <td>{{ $m->tipe_motor }}</td>
-                            <td>Rp. {{ number_format($m->harga_motor, 2) }}</td>
-                            <td>
-                                @if ($m->status == 'available')
-                                    Available <i class="bi bi-check-circle-fill text-success"></i>
-                                @else
-                                    Unavailable <i class="bi bi-x-circle-fill text-danger"></i>
-                                @endif
-                            </td>
-                            <td class="text-center">
-                                <a href="{{ route('motor.edit', $m->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                            </td>
-                            <td class="text-center">
-                                {{-- <form action="{{ route('motor.destroy', $m->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                                </form> --}}
-                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#{{ $m->id }}"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                    @empty
+    <div class="card">
+        <div class="card-body">
 
-                    @endforelse
-                </tbody>
-            </table>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <table id="tabel_motor" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama Motor</th>
+                                <th scope="col">Transmisi</th>
+                                <th scope="col">Harga (Harian)</th>
+                                <th scope="col">Status</th>
+                                <th scope="col" class="text-center">Edit</th>
+                                <th scope="col" class="text-center">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($motorDatas as $m)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $m->nama_motor }}</td>
+                                    <td>{{ $m->tipe_motor }}</td>
+                                    <td>Rp. {{ number_format($m->harga_motor, 2) }}</td>
+                                    <td>
+                                        @if ($m->status == 'available')
+                                            Available <i class="bi bi-check-circle-fill text-success"></i>
+                                        @else
+                                            Unavailable <i class="bi bi-x-circle-fill text-danger"></i>
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="{{ route('motor.edit', $m->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+                                    </td>
+                                    <td class="text-center">
+                                        {{-- <form action="{{ route('motor.destroy', $m->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                        </form> --}}
+                                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#{{ $m->id }}"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            @empty
+
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 

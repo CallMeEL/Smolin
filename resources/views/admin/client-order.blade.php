@@ -31,53 +31,58 @@
     <hr>
 
     {{-- Table Invoice --}}
+    <div class="card">
+        <div class="card-body">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <table id="table_invoice" class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">No. Telp</th>
-                        <th scope="col">Motor</th>
-                        <th scope="col">Tanggal Pinjam</th>
-                        <th scope="col">Tanggal Kembali</th>
-                        <th scope="col">Total Harga</th>
-                        <th scope="col">Bukti Pembayaran</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($invoices as $inv)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $inv->name }}</td>
-                            <td>{{ $inv->phone_number }}</td>
-                            <td>{{ $inv->nama_motor }}</td>
-                            <td>{{ date('d-m-Y', strtotime($inv->rent_date)) }}</td>
-                            <td>{{ date('d-m-Y', strtotime($inv->return_date)) }}</td>
-                            <td>Rp. {{ number_format($inv->total_price, 2) }}</td>
-                            <td>
-                                {{-- Jika bukti pembayaran !null maka ada icon jam, dan jika null maka icon silang --}}
-                                @if ($inv->payment_proof != null)
-                                    <i class="bi bi-check-circle-fill text-success"></i>
-                                @else
-                                    <i class="bi bi-x-circle-fill text-danger"></i>
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{ route('admin.detail-order', $inv->id) }}" class="btn btn-sm btn-primary
-                                    @if ($inv->payment_proof != null)
-                                    @else
-                                        disabled
-                                    @endif">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-            </table>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="table_invoice" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">No. Telp</th>
+                                <th scope="col">Motor</th>
+                                <th scope="col">Tanggal Pinjam</th>
+                                <th scope="col">Tanggal Kembali</th>
+                                <th scope="col">Total Harga</th>
+                                <th scope="col">Bukti Pembayaran</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($invoices as $inv)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $inv->name }}</td>
+                                    <td>{{ $inv->phone_number }}</td>
+                                    <td>{{ $inv->nama_motor }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($inv->rent_date)) }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($inv->return_date)) }}</td>
+                                    <td>Rp. {{ number_format($inv->total_price, 2) }}</td>
+                                    <td>
+                                        {{-- Jika bukti pembayaran !null maka ada icon jam, dan jika null maka icon silang --}}
+                                        @if ($inv->payment_proof != null)
+                                            <i class="bi bi-check-circle-fill text-success"></i>
+                                        @else
+                                            <i class="bi bi-x-circle-fill text-danger"></i>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin.detail-order', $inv->id) }}" class="btn btn-sm btn-primary
+                                            @if ($inv->payment_proof != null)
+                                            @else
+                                                disabled
+                                            @endif">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 
