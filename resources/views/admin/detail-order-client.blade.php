@@ -2,6 +2,10 @@
 @section('title', 'Detail Client Order')
 @section('menuOrderAdmin', 'active')
 
+<head>
+
+</head>
+
 @section('content')
 
 {{-- Header Client Order --}}

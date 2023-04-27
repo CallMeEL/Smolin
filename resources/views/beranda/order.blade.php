@@ -79,7 +79,7 @@
         </div>
 
         {{-- Modal for Cancel --}}
-        <div class="modal" id="{{ $invoice->invoice_id }}">
+        <div class="modal fade" id="{{ $invoice->invoice_id }}">
             <div class="modal-dialog">
             <div class="modal-content">
 

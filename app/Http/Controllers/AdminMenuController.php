@@ -46,7 +46,7 @@ class AdminMenuController extends Controller
             ->join('users', 'users.id', '=', 'invoices.user_id')
             ->join('rent_logs', 'rent_logs.invoice_id', '=', 'invoices.id')
             // Dimana rent_date setelah hari ini
-            ->where('invoices.rent_date', '>', date('Y-m-d'))
+            ->where('invoices.rent_date', '>=', date('Y-m-d'))
             // Dan payment_status != paid
             ->where('invoices.payment_status', '!=', 'paid')
             ->get();
@@ -119,6 +119,42 @@ class AdminMenuController extends Controller
             ]);
 
         return redirect()->route('admin.order');
+    }
+
+    public function returnMotorAdmin()
+    {
+        // Menampilkan table invoice, motor, user, dan rentlog
+        $invoices = Invoice::join('motors', 'motors.id', '=', 'invoices.motor_id')
+            ->join('users', 'users.id', '=', 'invoices.user_id')
+            ->join('rent_logs', 'rent_logs.invoice_id', '=', 'invoices.id')
+            // Dimana rent_date >= hari ini
+            ->where('invoices.rent_date', '>=', date('Y-m-d'))
+            // Dimana payment_status paid
+            ->where('invoices.payment_status', '=', 'paid')
+            // Dimana status unavailable
+            ->where('motors.status', '=', 'unavailable')
+            // Dimana actual_return_date = null
+            ->where('rent_logs.actual_return_date', '=', null)
+            ->get();
+
+        return view('admin.return-motor', compact('invoices'));
+    }
+
+    public function updateReturnMotorAdmin()
+    {
+        // Mengupdate actual_return_date menjadi hari ini
+        RentLog::where('actual_return_date', null)
+            ->update([
+                'actual_return_date' => date('Y-m-d'),
+            ]);
+
+        // Mengupdate status motor menjadi available
+        Motor::where('status', 'unavailable')
+            ->update([
+                'status' => 'available',
+            ]);
+
+        return redirect()->route('admin.return');
     }
 
 }

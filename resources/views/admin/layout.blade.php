@@ -21,7 +21,7 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="#"><strong>Smolin</strong></a>
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto me-3 me-lg-4">
+        <ul class="navbar-nav ms-auto me-3 me-lg-4 mt-3">
             {{-- Logout --}}
             <li class="nav-item">
                 <a class="btn text-white" href="/"><strong>Home</strong></a>
@@ -55,6 +55,11 @@
                             Client Order
                         </a>
 
+                        <a class="nav-link @yield('menuReturn')" href="{{ route('admin.return') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-stack"></i></div>
+                            Return Motor
+                        </a>
+
                         <div class="sb-sidenav-menu-heading">Vehicle</div>
 
                         <a class="nav-link @yield('menuCreateMotor')" href="{{ route('motor') }}">
@@ -79,7 +84,7 @@
             </nav>
         </div>
 
-        <div id="layoutSidenav_content">
+        <div id="layoutSidenav_content" style="background-color: rgb(235, 235, 235)">
             <main>
 
                 @yield('content')

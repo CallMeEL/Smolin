@@ -55,6 +55,14 @@ Route::put('/admin/{invoices}/reject', [AdminMenuController::class, 'rejectOrder
     ->middleware('auth', 'admin')
     ->name('admin.reject');
 
+Route::get('/admin/return-motor', [AdminMenuController::class, 'returnMotorAdmin'])
+    ->middleware('auth', 'admin')
+    ->name('admin.return');
+
+Route::put('/admin/{rentLogs}/return', [AdminMenuController::class, 'updateReturnMotorAdmin'])
+    ->middleware('auth', 'admin')
+    ->name('admin.update.return');
+
 //[+]============================================================[+]
 //                       Motor Controller
 //[+]============================================================[+]
