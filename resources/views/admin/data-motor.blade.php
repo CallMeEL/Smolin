@@ -89,7 +89,7 @@
 @forelse ($motorDatas as $m)
 
 {{-- Modal for Delete --}}
-<div class="modal" id="{{ $m->id }}">
+<div class="modal fade" id="{{ $m->id }}">
     <div class="modal-dialog">
     <div class="modal-content">
 

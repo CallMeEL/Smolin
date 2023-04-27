@@ -18,7 +18,7 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="#"><strong>Smolin</strong></a>
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto me-3 me-lg-4">
+        <ul class="navbar-nav ms-auto me-3 me-lg-4 mt-3">
             {{-- Logout --}}
             <li class="nav-item">
                 <a class="btn text-white" href="/"><strong>Home</strong></a>
