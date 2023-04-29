@@ -163,3 +163,7 @@ input[type="date"] {
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
 }
+
+.no-bullet-list:hover {
+    color: blue;
+}
