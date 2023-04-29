@@ -55,9 +55,9 @@
                                     <td>Rp. {{ number_format($m->harga_motor, 2) }}</td>
                                     <td>
                                         @if ($m->status == 'available')
-                                            Available <i class="bi bi-check-circle-fill text-success"></i>
+                                            <span class="badge bg-success">Available</span>
                                         @else
-                                            Unavailable <i class="bi bi-x-circle-fill text-danger"></i>
+                                            <span class="badge bg-danger">Unavailable</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
