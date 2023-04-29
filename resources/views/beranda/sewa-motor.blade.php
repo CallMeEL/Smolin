@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail Motor {{ $result->nama_motor }}</title>
+    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset('assets/beranda.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -53,7 +54,7 @@
                         </li>
                         {{-- Menu Contact --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
+                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#contact">Contact</a>
                         </li>
                         {{-- Tombol Logout --}}
                         <li class="nav-item">
