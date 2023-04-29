@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -53,7 +54,7 @@
                         </li>
                         {{-- Menu Contact --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
+                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#contact">Contact</a>
                         </li>
                         {{-- Tombol Logout --}}
                         <li class="nav-item">
@@ -77,7 +78,7 @@
                         </li>
                         {{-- Menu Contact --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#">Contact</a>
+                            <a class="nav-link text-white @yield('menuContact')" aria-current="page" href="#contact">Contact</a>
                         </li>
                         {{-- Tombol Login --}}
                         <li class="nav-item">
@@ -157,8 +158,40 @@
 
     @endauth
 
+
+    <div class="container-fluid text-white pt-4 pb-3" id="contact" style="background-color: #2a2d2f">
+        <div class="row d-flex justify-content-center align-items-start font-poppins">
+
+            <div class="col-md-4">
+                <div class="title">SMOLIN</div>
+                <div class="box-footer-caret"></div>
+                <div class="content">
+                    <ul class="no-bullet-list text-white">
+                        <li>
+                            <a href="" class="text-decoration-none text-white">Tentang Kami</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none text-white">Bantuan</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none text-white">Syarat dan Ketentuan</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="title">CONTACT</div>
+                <div class="box-footer-caret"></div>
+                <div class="text-white">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
     {{-- Footer --}}
-    <footer class="container-fluid text-center pt-5 pb-5">
+    <footer class="container-fluid text-center text-white bg-dark pt-5 pb-5">
         All Rights Reserved &copy; 2023
     </footer>
 

@@ -144,3 +144,22 @@ input[type="date"] {
     aspect-ratio: 1/1;
     object-fit: contain;
 }
+
+.box-footer-caret {
+    height: 4px;
+    width: 29px;
+    background: #fc2586e4;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+/* Font Poppins, sans-serif */
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+.no-bullet-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
