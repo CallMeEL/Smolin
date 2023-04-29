@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail Motor {{ $result->nama_motor }}</title>
-    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/beranda.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -46,7 +46,8 @@
                         </li>
                         {{-- Menu Order --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page" href="{{ route('order') }}">Order</a>
+                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page"
+                                href="{{ route('order') }}">Order</a>
                         </li>
                         {{-- Menu Profile --}}
                         <li class="nav-item">
@@ -132,7 +133,8 @@
                             </div>
                             <div class="card-footer d-flex content-justify-center">
                                 <div class="col-1"></div>
-                                <a href="{{ route('home') }}" class="btn btn-danger col-4"><strong>Kembali</strong></a>
+                                <a href="{{ route('home') }}"
+                                    class="btn btn-danger col-4"><strong>Kembali</strong></a>
                                 <div class="col-2"></div>
                                 <button type="submit" class="btn btn-success col-4"><strong>Sewa</strong></button>
                                 <div class="col-1"></div>
@@ -145,6 +147,7 @@
         </div>
 
 </body>
+
 <footer class="container-fluid text-center pt-5 pb-5">
     All Rights Reserved &copy; 2023
 </footer>

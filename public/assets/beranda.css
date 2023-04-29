@@ -159,11 +159,12 @@ input[type="date"] {
 }
 
 .no-bullet-list {
+    color: white;
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
 }
 
 .no-bullet-list:hover {
-    color: blue;
+    color: #fc2586e4;
 }

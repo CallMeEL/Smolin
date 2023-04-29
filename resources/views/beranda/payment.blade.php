@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Payment {{$result->invoice_id}}</title>
-    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon"/>
+    <title>Payment {{ $result->invoice_id }}</title>
+    <link rel="icon" href="{{ url('img/icon.png') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/beranda.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -14,10 +15,11 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
+
 <body class="banner-auth">
 
-     <!-- Navbar -->
-     <nav class="navbar fixed-top blur navbar-expand-lg shadow-5-strong">
+    <!-- Navbar -->
+    <nav class="navbar fixed-top blur navbar-expand-lg shadow-5-strong">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <strong class="text-white">Smolin</strong>
@@ -44,7 +46,8 @@
                         </li>
                         {{-- Menu Order --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page" href="{{ route('order') }}">Order</a>
+                            <a class="nav-link text-white @yield('menuOrder')" aria-current="page"
+                                href="{{ route('order') }}">Order</a>
                         </li>
                         {{-- Menu Profile --}}
                         <li class="nav-item">
@@ -102,10 +105,13 @@
                                 <strong>
                                     <p class="card-text text-capitalize text-end">{{ $result->name }}</p>
                                     <p class="card-text text-capitalize text-end">{{ $result->nama_motor }}</p>
-                                    <p class="card-text text-capitalize text-end">Rp. {{ number_format($result->harga_motor, 2) }}</p>
+                                    <p class="card-text text-capitalize text-end">Rp.
+                                        {{ number_format($result->harga_motor, 2) }}</p>
                                     <p class="card-text text-capitalize text-end">{{ $result->tipe_motor }}</p>
-                                    <p class="card-text text-capitalize text-end">{{ date('d-m-Y', strtotime($result->rent_date)) }}</p>
-                                    <p class="card-text text-capitalize text-end">{{ date('d-m-Y', strtotime($result->return_date)) }}</p>
+                                    <p class="card-text text-capitalize text-end">
+                                        {{ date('d-m-Y', strtotime($result->rent_date)) }}</p>
+                                    <p class="card-text text-capitalize text-end">
+                                        {{ date('d-m-Y', strtotime($result->return_date)) }}</p>
                                 </strong>
                             </div>
                         </div>
@@ -118,7 +124,8 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <h5 class="card-text text-end">Rp. <strong> {{ number_format($result->total_price, 2) }} </strong></h5>
+                                <h5 class="card-text text-end">Rp. <strong>
+                                        {{ number_format($result->total_price, 2) }} </strong></h5>
                             </div>
                         </div>
 
@@ -128,13 +135,17 @@
                         <div class="card-text">
                             <p><strong>Silahkan Masukkan Bukti Pembayaran</strong></p>
                         </div>
-                        <form action="{{ route('order.bukti', $result->id) }}" enctype="multipart/form-data" method="post">
+                        <form action="{{ route('order.bukti', $result->id) }}" enctype="multipart/form-data"
+                            method="post">
                             @method('PUT')
                             @csrf
                             <div class="row">
                                 <div class="col-sm-8">
                                     {{-- Bukti Gambar Pembayaran --}}
-                                    <input type="file" class="form-control @error('pament_proof') is-invalid @enderror" id="payment_proof" placeholder="Bukti Pembayaran" name="payment_proof" accept="image/gif, image/jpeg, image/png" required>
+                                    <input type="file"
+                                        class="form-control @error('pament_proof') is-invalid @enderror"
+                                        id="payment_proof" placeholder="Bukti Pembayaran" name="payment_proof"
+                                        accept="image/gif, image/jpeg, image/png" required>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="d-grid">
@@ -158,6 +169,7 @@
 
     </div>
 
+
 </body>
 
 
@@ -165,4 +177,5 @@
 <footer class="container-fluid text-center text-white bg-dark pt-5 pb-5">
     All Rights Reserved &copy; 2023
 </footer>
+
 </html>
