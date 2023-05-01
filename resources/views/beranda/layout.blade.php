@@ -162,8 +162,8 @@
     @endauth
 
 
-    <div class="container-fluid text-white pt-5 pb-5" id="contact" style="background-color: #2a2d2f">
-        <div class="row d-flex justify-content-center align-items-start font-poppins">
+    <div class="container-fluid text-white pt-5" id="contact" style="background-color: #2a2d2f">
+        <div class="row d-flex justify-content-center align-items-start font-poppins pb-5">
 
             <div class="col-md-3">
                 <div class="title">SMOLIN</div>
@@ -206,12 +206,17 @@
             </div>
 
         </div>
+
+        <br>
+
+        <div class="row text-end">
+            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Made with ❤️ by PSI Group 8 Teknik Informatika B 2021</p>
+        </div>
     </div>
     {{-- Footer --}}
     <footer class="container-fluid text-center text-white bg-dark pt-5 pb-5">
         All Rights Reserved &copy; 2023
     </footer>
-
 </body>
 
 </html>

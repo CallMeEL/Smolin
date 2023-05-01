@@ -63,6 +63,10 @@ Route::put('/admin/{rentLogs}/return', [AdminMenuController::class, 'updateRetur
     ->middleware('auth', 'admin')
     ->name('admin.update.return');
 
+Route::get('/admin/user-table', [AdminMenuController::class, 'usersTable'])
+    ->middleware('auth', 'admin')
+    ->name('admin.user.table');
+
 //[+]============================================================[+]
 //                       Motor Controller
 //[+]============================================================[+]

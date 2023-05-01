@@ -157,4 +157,12 @@ class AdminMenuController extends Controller
         return redirect()->route('admin.return');
     }
 
+    public function usersTable()
+    {
+        // Menampilkan table users
+        $users = User::where('role_id', '2')->get();
+
+        return view('admin.users-table', compact('users'));
+    }
+
 }

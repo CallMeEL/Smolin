@@ -73,6 +73,13 @@
                             Data Motor
                         </a>
 
+                        <div class="sb-sidenav-menu-heading">Users</div>
+
+                        <a class="nav-link @yield('menuUserTable')" href="{{ route('admin.user.table') }}">
+                            <div class="sb-nav-link-icon"><i class="bi bi-people-fill"></i></div>
+                            Daftar Pengguna
+                        </a>
+
                     </div>
                 </div>
 
