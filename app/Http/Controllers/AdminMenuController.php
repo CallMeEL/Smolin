@@ -96,6 +96,7 @@ class AdminMenuController extends Controller
     {
         // Mengupdate invoice sesuai id menjadi 'paid'
         Invoice::where($invoice->id)
+            ->first()
             ->update([
                 'payment_status' => 'paid',
             ]);
