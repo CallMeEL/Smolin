@@ -99,6 +99,13 @@
                                 <p class="card-text text-start">Transmisi:</p>
                                 <p class="card-text text-start">Tanggal Sewa:</p>
                                 <p class="card-text text-start">Tanggal Kembali:</p>
+                                <p class="card-text text-start">Silahkan Transfer ke nomor rekening berikut ini:
+                                </p>
+                                <p class="card-text text-start">
+                                    <strong>XXXX-XXXX-XXXX-XXXX</strong>
+                                </p>
+                                <p class="card-text text-start">a.n. Achmad Syifaul Rusdi
+                                </p>
                             </div>
 
                             <div class="col-sm-6">
@@ -174,7 +181,7 @@
 
 
 
-<footer class="container-fluid text-center text-white bg-dark pt-5 pb-5">
+<footer class="container-fluid text-center text-white bg-dark pt-5 pb-5 fixed-bottom">
     All Rights Reserved &copy; 2023
 </footer>
 
